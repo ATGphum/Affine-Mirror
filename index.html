@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Affine Mirror</title>
+<meta name="description" content="A standalone design direction for Affine — the alignment layer for open intelligence.">
+<link rel="icon" type="image/png" href="./assets/affine-mark-clean.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --field: #050505;
+    --theorem: #F5F2EA;
+    --muted: #8A877E;
+    --line: rgba(245,242,234,0.10);
+    --gold: #D6B85A;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: var(--field); color: var(--theorem); }
+  body {
+    font-family: 'DM Mono', ui-monospace, monospace;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+  }
+  ::selection { background: rgba(214,184,90,0.30); color: var(--theorem); }
+  a { color: inherit; text-decoration: none; }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 96px 28px 120px; }
+
+  header { display: flex; align-items: center; gap: 16px; margin-bottom: 56px; }
+  header img { width: 44px; height: 44px; object-fit: contain; }
+  .mark-text { font-family: 'Fira Code', monospace; }
+  .mark-text .name { font-size: 18px; font-weight: 600; letter-spacing: 0.04em; }
+  .mark-text .sub { font-size: 12px; color: var(--muted); letter-spacing: 0.18em; text-transform: uppercase; }
+
+  h1 { font-family: 'Fira Code', monospace; font-size: 30px; font-weight: 500; line-height: 1.3; margin: 0 0 18px; max-width: 22ch; }
+  .lede { color: var(--muted); font-size: 15px; max-width: 60ch; margin: 0 0 8px; }
+  .lede .gold { color: var(--gold); }
+
+  .label { font-family: 'Fira Code', monospace; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); margin: 64px 0 20px; }
+
+  .pages { display: grid; gap: 1px; background: var(--line); border: 1px solid var(--line); }
+  .page {
+    display: flex; align-items: baseline; gap: 18px;
+    background: var(--field); padding: 22px 24px;
+    transition: background 140ms ease;
+  }
+  .page:hover { background: rgba(214,184,90,0.06); }
+  .page .idx { font-family: 'Fira Code', monospace; font-size: 12px; color: var(--gold); min-width: 28px; }
+  .page .meta { flex: 1; }
+  .page .t { font-family: 'Fira Code', monospace; font-size: 16px; font-weight: 500; }
+  .page .d { font-size: 13px; color: var(--muted); margin-top: 3px; }
+  .page .arrow { color: var(--muted); transition: transform 140ms ease, color 140ms ease; }
+  .page:hover .arrow { color: var(--gold); transform: translateX(3px); }
+
+  .docs { display: flex; flex-wrap: wrap; gap: 12px; }
+  .docs a {
+    border: 1px solid var(--line); padding: 10px 16px; font-size: 13px; color: var(--muted);
+    transition: border-color 140ms ease, color 140ms ease;
+  }
+  .docs a:hover { border-color: var(--gold); color: var(--theorem); }
+
+  footer { margin-top: 80px; padding-top: 28px; border-top: 1px solid var(--line); font-size: 12px; color: var(--muted); }
+  footer .quote { color: var(--theorem); font-family: 'Fira Code', monospace; }
+  footer a:hover { color: var(--gold); }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <img src="./assets/affine-mark-clean.png" alt="Affine mark">
+      <div class="mark-text">
+        <div class="name">Affine</div>
+        <div class="sub">Alignment Mirror</div>
+      </div>
+    </header>
+
+    <h1>The alignment layer for open intelligence.</h1>
+    <p class="lede">Bittensor is the incentive layer that produces intelligence. <span class="gold">Affine</span> is the mechanism that makes produced intelligence cumulative — it evaluates, aligns, composes, validates, inherits, and reopens the frontier.</p>
+    <p class="lede">A standalone design direction: five page concepts, a doctrine, and a visual system.</p>
+
+    <div class="label">Pages</div>
+    <div class="pages">
+      <a class="page" href="./Affine%20Landing.dc.html">
+        <span class="idx">01</span>
+        <span class="meta"><span class="t">Landing</span><span class="d">The opening definition — what Affine is and why it exists.</span></span>
+        <span class="arrow">→</span>
+      </a>
+      <a class="page" href="./Affine%20Rationale.dc.html">
+        <span class="idx">02</span>
+        <span class="meta"><span class="t">Rationale</span><span class="d">Longform argument for the alignment-layer thesis.</span></span>
+        <span class="arrow">→</span>
+      </a>
+      <a class="page" href="./Affine%20Dashboard.dc.html">
+        <span class="idx">03</span>
+        <span class="meta"><span class="t">Dashboard</span><span class="d">Mechanism view — evaluation, resolution, inheritance.</span></span>
+        <span class="arrow">→</span>
+      </a>
+      <a class="page" href="./Affine%20Design%20System.dc.html">
+        <span class="idx">04</span>
+        <span class="meta"><span class="t">Design System</span><span class="d">Color, type, layout, and tokens. Restraint is the design.</span></span>
+        <span class="arrow">→</span>
+      </a>
+      <a class="page" href="./Affine%20About.dc.html">
+        <span class="idx">05</span>
+        <span class="meta"><span class="t">About</span><span class="d">Overview and positioning relative to Bittensor.</span></span>
+        <span class="arrow">→</span>
+      </a>
+    </div>
+
+    <div class="label">Docs</div>
+    <div class="docs">
+      <a href="./uploads/AFFINE_ALIGNMENT_MIRROR_DOCTRINE.md">Doctrine ↗</a>
+      <a href="./uploads/AFFINE_ALIGNMENT_MIRROR_VISUAL_SYSTEM.md">Visual System ↗</a>
+      <a href="https://github.com/ATGphum/Affine-Mirror">Repository ↗</a>
+    </div>
+
+    <footer>
+      <p class="quote">Black is the field, white is the theorem, gold is earned.</p>
+      <p>Affine Alignment Mirror — design direction. Pages render via the bundled <code>support.js</code> runtime.</p>
+    </footer>
+  </div>
+</body>
+</html>
