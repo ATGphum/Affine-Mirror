@@ -17,7 +17,7 @@ runtime in [`support.js`](support.js) and can be opened directly in a browser.
 
 | File | Purpose |
 | --- | --- |
-| [`Affine Landing.dc.html`](Affine%20Landing.dc.html) | Landing page concept |
+| [`index.html`](index.html) | Landing page concept — the site root / default page |
 | [`Affine Rationale.dc.html`](Affine%20Rationale.dc.html) | Longform rationale |
 | [`Affine Dashboard.dc.html`](Affine%20Dashboard.dc.html) | Product / mechanism dashboard |
 | [`Affine Design System.dc.html`](Affine%20Design%20System.dc.html) | Design system & tokens |
@@ -44,7 +44,7 @@ Open any `.dc.html` file in a browser, or serve the directory locally:
 
 ```sh
 python3 -m http.server 8000
-# then visit http://localhost:8000/Affine%20Landing.dc.html
+# then visit http://localhost:8000/  (serves the landing page)
 ```
 
 ## Runtime

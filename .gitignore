@@ -17,3 +17,6 @@ Icon
 
 # Dependencies (if a build setup is added later)
 node_modules/
+
+# Local Claude Code preview config (machine-specific paths)
+.claude/
