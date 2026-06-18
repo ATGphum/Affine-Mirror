@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  html, body { margin: 0; padding: 0; background: #050505; }
+  ::selection { background: rgba(214,184,90,0.30); color: #F5F2EA; }
+  a { text-decoration: none; }
+  .dash { font-family: 'Fira Code','DM Mono',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; }
+  .dash table { width: 100%; border-collapse: collapse; }
+  .dash th { font-weight: 500; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #5e5a52; text-align: right; padding: 0 0 14px; white-space: nowrap; }
+  .dash th.l, .dash td.l { text-align: left; }
+  .dash td { font-size: 12px; color: #D8D4C8; text-align: right; padding: 14px 0; border-top: 1px solid rgba(245,242,234,0.07); white-space: nowrap; }
+  .dash tr td { transition: background 0.15s ease; }
+  .dash tbody tr:hover td { background: rgba(245,242,234,0.018); }
+  body.reveal-on [data-reveal] { opacity: 0; transform: translateY(14px); transition: opacity 0.8s ease, transform 0.8s ease; }
+  body.reveal-on [data-reveal].in { opacity: 1; transform: none; }
+</style>
+</helmet>
+<div style="background:#050505; color:#F5F2EA; font-family:'Haffer','HafferSQ','Helvetica Neue','Helvetica',Arial,sans-serif; min-height:100vh; -webkit-font-smoothing:antialiased; overflow-x:hidden;">
+
+  <header style="position:fixed; top:0; left:0; right:0; z-index:20; display:grid; grid-template-columns:1fr auto 1fr; align-items:center; padding:24px 40px; background:linear-gradient(to bottom, rgba(5,5,5,0.96), rgba(5,5,5,0)); pointer-events:none;">
+    <div style="justify-self:start; pointer-events:auto;">
+      <a href="Affine Landing.dc.html" aria-label="Affine home" style="display:inline-block;">
+        <svg width="28" height="25" viewBox="0 0 24 22" fill="none"><path d="M4 20 L12 3 L20 20" stroke="#D6B85A" stroke-width="2.2" stroke-linejoin="miter" stroke-linecap="butt"/></svg>
+      </a>
+    </div>
+    <nav style="justify-self:center; display:flex; gap:38px; pointer-events:auto;">
+      <a href="Affine Design System.dc.html" style="font-family:'Fira Code','DM Mono',monospace; font-size:11px; font-weight:500; letter-spacing:0.08em; text-transform:uppercase; color:#D8D4C8;">Design System</a>
+      <a href="Affine Rationale.dc.html" style="font-family:'Fira Code','DM Mono',monospace; font-size:11px; font-weight:500; letter-spacing:0.08em; text-transform:uppercase; color:#D8D4C8;">Rationale</a>
+      <a href="Affine About.dc.html" style="font-family:'Fira Code','DM Mono',monospace; font-size:11px; font-weight:500; letter-spacing:0.08em; text-transform:uppercase; color:#D8D4C8;">Manifesto</a>
+      <span style="font-family:'Fira Code','DM Mono',monospace; font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:#D6B85A; cursor:default;">Dashboard</span>
+    </nav>
+    <div style="justify-self:end;"></div>
+  </header>
+
+  <div class="dash" style="max-width:1200px; margin:0 auto; padding:128px 40px 0; box-sizing:border-box;">
+
+    <!-- CHAMPION STRIP -->
+    <section style="padding:24px 0 8px; text-align:center;">
+      <div style="font-size:13px; font-weight:600; letter-spacing:0.16em; color:#9B968B;">CHAMPION&nbsp;&nbsp;·&nbsp;&nbsp;<span style="color:#D6B85A;">AFFINE-XXXI</span></div>
+      <div style="margin-top:34px; display:flex; justify-content:center; gap:clamp(28px,5vw,68px); flex-wrap:wrap;">
+        <div><div style="font-size:10px; letter-spacing:0.1em; color:#5e5a52;">BBH</div><div style="margin-top:12px; font-size:21px; font-weight:500; color:#F5F2EA; white-space:nowrap;">78.51 <span style="font-size:11px; color:#C0705A;">▼8.9</span></div><div style="margin-top:7px; font-size:11px; color:#5e5a52;">87.38</div></div>
+        <div><div style="font-size:10px; letter-spacing:0.1em; color:#5e5a52;">HUMANEVAL</div><div style="margin-top:12px; font-size:21px; font-weight:500; color:#F5F2EA; white-space:nowrap;">83.54 <span style="font-size:11px; color:#6F9F7A;">▲1.8</span></div><div style="margin-top:7px; font-size:11px; color:#5e5a52;">81.71</div></div>
+        <div><div style="font-size:10px; letter-spacing:0.1em; color:#5e5a52;">MCP-AGENT</div><div style="margin-top:12px; font-size:21px; font-weight:500; color:#F5F2EA; white-space:nowrap;">62.92 <span style="font-size:11px; color:#6F9F7A;">▲1.1</span></div><div style="margin-top:7px; font-size:11px; color:#5e5a52;">61.80</div></div>
+        <div><div style="font-size:10px; letter-spacing:0.1em; color:#5e5a52;">SWE-MULTI</div><div style="margin-top:12px; font-size:21px; font-weight:500; color:#F5F2EA; white-space:nowrap;">10.00 <span style="font-size:11px; color:#6F9F7A;">▲7.7</span></div><div style="margin-top:7px; font-size:11px; color:#5e5a52;">2.34</div></div>
+        <div><div style="font-size:10px; letter-spacing:0.1em; color:#5e5a52;">SWE-REBENCH</div><div style="margin-top:12px; font-size:21px; font-weight:500; color:#F5F2EA; white-space:nowrap;">7.02 <span style="font-size:11px; color:#6F9F7A;">▲7.0</span></div><div style="margin-top:7px; font-size:11px; color:#5e5a52;">0.00</div></div>
+        <div><div style="font-size:10px; letter-spacing:0.1em; color:#5e5a52;">TERMINAL</div><div style="margin-top:12px; font-size:21px; font-weight:500; color:#F5F2EA; white-space:nowrap;">2.25 <span style="font-size:11px; color:#C0705A;">▼1.1</span></div><div style="margin-top:7px; font-size:11px; color:#5e5a52;">3.37</div></div>
+      </div>
+      <div style="margin-top:30px; font-size:10px; letter-spacing:0.1em; color:#5e5a52;">BENCHMARKS VS. QWEN3-32B ↗</div>
+      <div style="margin-top:40px; display:flex; justify-content:center; gap:28px;">
+        <span style="font-size:11px; letter-spacing:0.08em; color:#9B968B;">ROLLOUTS BUCKET&nbsp; <span style="color:#5e5a52;">⧉</span></span>
+        <span style="color:#5e5a52;">·</span>
+        <span style="font-size:11px; letter-spacing:0.08em; color:#9B968B;">DOWNLOAD SCRIPT&nbsp; <span style="color:#5e5a52;">⧉</span></span>
+      </div>
+    </section>
+
+    <!-- EVOLUTION -->
+    <section data-reveal style="margin-top:56px;">
+      <div style="display:flex; align-items:center; gap:14px;">
+        <span style="font-size:11px; color:#5e5a52;">▾</span>
+        <span style="font-size:12px; font-weight:600; letter-spacing:0.1em; color:#D8D4C8;">EVOLUTION</span>
+        <span style="font-size:11px; color:#5e5a52;">ⓘ&nbsp; /&nbsp; <span style="color:#3f3c37;">BENCHMARK</span></span>
+        <span style="flex:1; height:1px; background:rgba(245,242,234,0.14);"></span>
+      </div>
+
+      <div style="position:relative; margin-top:64px; display:flex; justify-content:space-between; align-items:flex-end; gap:18px;">
+        <span style="position:absolute; left:0; right:0; bottom:26px; height:1px; background:rgba(245,242,234,0.1);"></span>
+        <!-- era group template -->
+        <div style="flex:1; display:flex; flex-direction:column; align-items:center;">
+          <div style="display:flex; align-items:flex-end; justify-content:center; gap:6px; height:268px;">
+            <div style="display:flex; flex-direction:column; align-items:center; justify-content:flex-end; width:15px;"><div style="font-size:9px; color:#D8D4C8; margin-bottom:5px;">8.0</div><div style="width:15px; height:27px; background:rgba(245,242,234,0.16); border:1px solid rgba(245,242,234,0.3);"></div><div style="font-size:9px; color:#5e5a52; margin-top:8px;">D</div></div>
+            <div style="display:flex; flex-direction:column; align-items:center; justify-content:flex-end; width:15px;"><div style="font-size:9px; color:#D8D4C8; margin-bottom:5px;">28.0</div><div style="width:15px; height:93px; background:rgba(245,242,234,0.4);"></div><div style="font-size:9px; color:#5e5a52; margin-top:8px;">M</div></div>
+            <div style="display:flex; flex-direction:column; align-items:center; justify-content:flex-end; width:15px;"><div style="font-size:9px; color:#D8D4C8; margin-bottom:5px;">47.8</div><div style="width:15px; height:159px; background:rgba(245,242,234,0.4);"></div><div style="font-size:9px; color:#5e5a52; margin-top:8px;">N</div></div>
+            <div style="display:flex; flex-direction:column; align-items:center; justify-content:flex-end; width:15px;"><div style="font-size:9px; color:#D8D4C8; margin-bottom:5px;">45.0</div><div style="width:15px; height:150px; background:rgba(245,242,234,0.4);"></div><div style="font-size:9px; color:#5e5a52; margin-top:8px;">S</div></div>
+            <div style="display:flex; flex-direction:column; align-items:center; justify-content:flex-end; width:15px;"><div style="font-size:9px; color:#D8D4C8; margin-bottom:5px;">56.7</div><div style="width:15px; height:189px; background:rgba(245,242,234,0.4);"></div><div style="font-size:9px; color:#5e5a52; margin-top:8px;">T</div></div>
+          </div>
+          <div style="margin-top:18px; font-size:11px; letter-spacing:0.04em; color:#9B968B; white-space:nowrap;">AFFINE-XXVI</div>
+          <div style="margin-top:5px; font-size:9px; color:#5e5a52;">06/07</div>
+        </div>
+        <div style="flex:1; display:flex; flex-direction:column; align-items:center;">
+          <div style="display:flex; align-items:flex-end; justify-content:center; gap:6px; height:268px;">
+            <div style="display:flex; flex-direction:column; align-items:center; justify-content:flex-end; width:15px;"><div style="font-size:9px; color:#D8D4C8; margin-bottom:5px;">8.0</div><div style="width:15px; height:27px; background:rgba(245,242,234,0.16); border:1px solid rgba(245,242,234,0.3);"></div><div style="font-size:9px; color:#5e5a52; margin-top:8px;">D</div></div>
+            <div style="display:flex; flex-direction:column; align-items:center; justify-content:flex-end; width:15px;"><div style="font-size:9px; color:#D8D4C8; margin-bottom:5px;">28.0</div><div style="width:15px; height:93px; background:rgba(245,242,234,0.4);"></div><div style="font-size:9px; color:#5e5a52; margin-top:8px;">M</div></div>
+            <div style="display:flex; flex-direction:column; align-items:center; justify-content:flex-end; width:15px;"><div style="font-size:9px; color:#D8D4C8; margin-bottom:5px;">48.7</div><div style="width:15px; height:162px; background:rgba(245,242,234,0.4);"></div><div style="font-size:9px; color:#5e5a52; margin-top:8px;">N</div></div>
+            <div style="display:flex; flex-direction:column; align-items:center; justify-content:flex-end; width:15px;"><div style="font-size:9px; color:#D8D4C8; margin-bottom:5px;">48.3</div><div style="width:15px; height:161px; background:rgba(245,242,234,0.4);"></div><div style="font-size:9px; color:#5e5a52; margin-top:8px;">S</div></div>
+            <div style="display:flex; flex-direction:column; align-items:center; justify-content:flex-end; width:15px;"><div style="font-size:9px; color:#D8D4C8; margin-bottom:5px;">56.7</div><div style="width:15px; height:189px; background:rgba(245,242,234,0.4);"></div><div style="font-size:9px; color:#5e5a52; margin-top:8px;">T</div></div>
+          </div>
+          <div style="margin-top:18px; font-size:11px; letter-spacing:0.04em; color:#9B968B; white-space:nowrap;">AFFINE-XXVII</div>
+          <div style="margin-top:5px; font-size:9px; color:#5e5a52;">06/08</div>
+        </div>
+        <div style="flex:1; display:flex; flex-direction:column; align-items:center;">
+          <div style="display:flex; align-items:flex-end; justify-content:center; gap:6px; height:268px;">
+            <div style="display:flex; flex-direction:column; align-items:center; justify-content:flex-end; width:15px;"><div style="font-size:9px; color:#D8D4C8; margin-bottom:5px;">8.0</div><div style="width:15px; height:27px; background:rgba(245,242,234,0.16); border:1px solid rgba(245,242,234,0.3);"></div><div style="font-size:9px; color:#5e5a52; margin-top:8px;">D</div></div>
+            <div style="display:flex; flex-direction:column; align-items:center; justify-content:flex-end; width:15px;"><div style="font-size:9px; color:#D8D4C8; margin-bottom:5px;">52.2</div><div style="width:15px; height:174px; background:rgba(245,242,234,0.4);"></div><div style="font-size:9px; color:#5e5a52; margin-top:8px;">M</div></div>
+            <div style="display:flex; flex-direction:column; align-items:center; justify-content:flex-end; width:15px;"><div style="font-size:9px; color:#D8D4C8; margin-bottom:5px;">48.7</div><div style="width:15px; height:162px; background:rgba(245,242,234,0.4);"></div><div style="font-size:9px; color:#5e5a52; margin-top:8px;">N</div></div>
+            <div style="display:flex; flex-direction:column; align-items:center; justify-content:flex-end; width:15px;"><div style="font-size:9px; color:#D8D4C8; margin-bottom:5px;">48.3</div><div style="width:15px; height:161px; background:rgba(245,242,234,0.4);"></div><div style="font-size:9px; color:#5e5a52; margin-top:8px;">S</div></div>
+            <div style="display:flex; flex-direction:column; align-items:center; justify-content:flex-end; width:15px;"><div style="font-size:9px; color:#D8D4C8; margin-bottom:5px;">58.5</div><div style="width:15px; height:195px; background:rgba(245,242,234,0.4);"></div><div style="font-size:9px; color:#5e5a52; margin-top:8px;">T</div></div>
+          </div>
+          <div style="margin-top:18px; font-size:11px; letter-spacing:0.04em; color:#9B968B; white-space:nowrap;">AFFINE-XXVIII</div>
+          <div style="margin-top:5px; font-size:9px; color:#5e5a52;">06/09</div>
+        </div>
+        <div style="flex:1; display:flex; flex-direction:column; align-items:center;">
+          <div style="display:flex; align-items:flex-end; justify-content:center; gap:6px; height:268px;">
+            <div style="display:flex; flex-direction:column; align-items:center; justify-content:flex-end; width:15px;"><div style="font-size:9px; color:#D8D4C8; margin-bottom:5px;">8.0</div><div style="width:15px; height:27px; background:rgba(245,242,234,0.16); border:1px solid rgba(245,242,234,0.3);"></div><div style="font-size:9px; color:#5e5a52; margin-top:8px;">D</div></div>
+            <div style="display:flex; flex-direction:column; align-items:center; justify-content:flex-end; width:15px;"><div style="font-size:9px; color:#D8D4C8; margin-bottom:5px;">52.9</div><div style="width:15px; height:176px; background:rgba(245,242,234,0.4);"></div><div style="font-size:9px; color:#5e5a52; margin-top:8px;">M</div></div>
+            <div style="display:flex; flex-direction:column; align-items:center; justify-content:flex-end; width:15px;"><div style="font-size:9px; color:#D8D4C8; margin-bottom:5px;">51.8</div><div style="width:15px; height:172px; background:rgba(245,242,234,0.4);"></div><div style="font-size:9px; color:#5e5a52; margin-top:8px;">N</div></div>
+            <div style="display:flex; flex-direction:column; align-items:center; justify-content:flex-end; width:15px;"><div style="font-size:9px; color:#D8D4C8; margin-bottom:5px;">54.4</div><div style="width:15px; height:181px; background:rgba(245,242,234,0.4);"></div><div style="font-size:9px; color:#5e5a52; margin-top:8px;">S</div></div>
+            <div style="display:flex; flex-direction:column; align-items:center; justify-content:flex-end; width:15px;"><div style="font-size:9px; color:#D8D4C8; margin-bottom:5px;">67.5</div><div style="width:15px; height:225px; background:rgba(245,242,234,0.4);"></div><div style="font-size:9px; color:#5e5a52; margin-top:8px;">T</div></div>
+          </div>
+          <div style="margin-top:18px; font-size:11px; letter-spacing:0.04em; color:#9B968B; white-space:nowrap;">AFFINE-XXIX</div>
+          <div style="margin-top:5px; font-size:9px; color:#5e5a52;">06/10</div>
+        </div>
+        <div style="flex:1; display:flex; flex-direction:column; align-items:center;">
+          <div style="display:flex; align-items:flex-end; justify-content:center; gap:6px; height:268px;">
+            <div style="display:flex; flex-direction:column; align-items:center; justify-content:flex-end; width:15px;"><div style="font-size:9px; color:#D8D4C8; margin-bottom:5px;">8.3</div><div style="width:15px; height:28px; background:rgba(245,242,234,0.16); border:1px solid rgba(245,242,234,0.3);"></div><div style="font-size:9px; color:#5e5a52; margin-top:8px;">D</div></div>
+            <div style="display:flex; flex-direction:column; align-items:center; justify-content:flex-end; width:15px;"><div style="font-size:9px; color:#D8D4C8; margin-bottom:5px;">61.4</div><div style="width:15px; height:205px; background:rgba(245,242,234,0.4);"></div><div style="font-size:9px; color:#5e5a52; margin-top:8px;">M</div></div>
+            <div style="display:flex; flex-direction:column; align-items:center; justify-content:flex-end; width:15px;"><div style="font-size:9px; color:#D8D4C8; margin-bottom:5px;">51.8</div><div style="width:15px; height:172px; background:rgba(245,242,234,0.4);"></div><div style="font-size:9px; color:#5e5a52; margin-top:8px;">N</div></div>
+            <div style="display:flex; flex-direction:column; align-items:center; justify-content:flex-end; width:15px;"><div style="font-size:9px; color:#D8D4C8; margin-bottom:5px;">55.8</div><div style="width:15px; height:186px; background:rgba(245,242,234,0.4);"></div><div style="font-size:9px; color:#5e5a52; margin-top:8px;">S</div></div>
+            <div style="display:flex; flex-direction:column; align-items:center; justify-content:flex-end; width:15px;"><div style="font-size:9px; color:#D8D4C8; margin-bottom:5px;">70.2</div><div style="width:15px; height:234px; background:rgba(245,242,234,0.4);"></div><div style="font-size:9px; color:#5e5a52; margin-top:8px;">T</div></div>
+          </div>
+          <div style="margin-top:18px; font-size:11px; letter-spacing:0.04em; color:#9B968B; white-space:nowrap;">AFFINE-XXX</div>
+          <div style="margin-top:5px; font-size:9px; color:#5e5a52;">06/15</div>
+        </div>
+        <div style="flex:1; display:flex; flex-direction:column; align-items:center;">
+          <div style="display:flex; align-items:flex-end; justify-content:center; gap:6px; height:268px;">
+            <div style="display:flex; flex-direction:column; align-items:center; justify-content:flex-end; width:15px;"><div style="font-size:9px; color:#D6B85A; margin-bottom:5px;">8.4</div><div style="width:15px; height:28px; background:#D6B85A;"></div><div style="font-size:9px; color:#8F7832; margin-top:8px;">D</div></div>
+            <div style="display:flex; flex-direction:column; align-items:center; justify-content:flex-end; width:15px;"><div style="font-size:9px; color:#D6B85A; margin-bottom:5px;">68.1</div><div style="width:15px; height:227px; background:#D6B85A;"></div><div style="font-size:9px; color:#8F7832; margin-top:8px;">M</div></div>
+            <div style="display:flex; flex-direction:column; align-items:center; justify-content:flex-end; width:15px;"><div style="font-size:9px; color:#D6B85A; margin-bottom:5px;">51.8</div><div style="width:15px; height:172px; background:rgba(214,184,90,0.4); border:1px solid #D6B85A;"></div><div style="font-size:9px; color:#8F7832; margin-top:8px;">N</div></div>
+            <div style="display:flex; flex-direction:column; align-items:center; justify-content:flex-end; width:15px;"><div style="font-size:9px; color:#D6B85A; margin-bottom:5px;">55.8</div><div style="width:15px; height:186px; background:rgba(214,184,90,0.4); border:1px solid #D6B85A;"></div><div style="font-size:9px; color:#8F7832; margin-top:8px;">S</div></div>
+            <div style="display:flex; flex-direction:column; align-items:center; justify-content:flex-end; width:15px;"><div style="font-size:9px; color:#D6B85A; margin-bottom:5px;">70.5</div><div style="width:15px; height:235px; background:#D6B85A;"></div><div style="font-size:9px; color:#8F7832; margin-top:8px;">T</div></div>
+          </div>
+          <div style="margin-top:18px; font-size:11px; font-weight:600; letter-spacing:0.04em; color:#D6B85A; white-space:nowrap;">AFFINE-XXXI</div>
+          <div style="margin-top:5px; font-size:9px; color:#8F7832;">06/16</div>
+        </div>
+      </div>
+
+      <div style="margin-top:48px; display:flex; justify-content:center; gap:10px; flex-wrap:wrap;">
+        <span style="font-size:10px; letter-spacing:0.08em; color:#F5F2EA; border:1px solid rgba(245,242,234,0.45); padding:6px 14px; border-radius:6px;">all</span>
+        <span style="font-size:10px; letter-spacing:0.08em; color:#9B968B; border:1px solid rgba(245,242,234,0.12); padding:6px 12px; border-radius:6px;"><span style="display:inline-block; width:14px; text-align:center; color:#D8D4C8;">D</span>&nbsp; DISTILL</span>
+        <span style="font-size:10px; letter-spacing:0.08em; color:#9B968B; border:1px solid rgba(245,242,234,0.12); padding:6px 12px; border-radius:6px;"><span style="display:inline-block; width:14px; text-align:center; color:#D8D4C8;">M</span>&nbsp; MEMORY</span>
+        <span style="font-size:10px; letter-spacing:0.08em; color:#9B968B; border:1px solid rgba(245,242,234,0.12); padding:6px 12px; border-radius:6px;"><span style="display:inline-block; width:14px; text-align:center; color:#D8D4C8;">N</span>&nbsp; NAVWORLD</span>
+        <span style="font-size:10px; letter-spacing:0.08em; color:#9B968B; border:1px solid rgba(245,242,234,0.12); padding:6px 12px; border-radius:6px;"><span style="display:inline-block; width:14px; text-align:center; color:#D8D4C8;">S</span>&nbsp; SWE</span>
+        <span style="font-size:10px; letter-spacing:0.08em; color:#9B968B; border:1px solid rgba(245,242,234,0.12); padding:6px 12px; border-radius:6px;"><span style="display:inline-block; width:14px; text-align:center; color:#D8D4C8;">T</span>&nbsp; TERMINAL</span>
+      </div>
+    </section>
+
+    <!-- RELEASES -->
+    <section data-reveal style="margin-top:96px;">
+      <div style="display:flex; align-items:center; gap:14px;">
+        <span style="font-size:11px; color:#5e5a52;">▾</span>
+        <span style="font-size:12px; font-weight:600; letter-spacing:0.1em; color:#D8D4C8;">RELEASES</span>
+        <span style="flex:1; height:1px; background:rgba(245,242,234,0.14);"></span>
+      </div>
+      <table style="margin-top:32px;">
+        <thead><tr>
+          <th class="l">Era</th><th class="l">UID</th><th class="l">Model</th>
+          <th>BBH</th><th>HumanEval</th><th>MCP-Agent</th><th>SWE-Multi</th><th>SWE-Rebench</th><th>Terminal</th>
+          <th>Date</th><th>Λ / Day</th><th></th>
+        </tr></thead>
+        <tbody>
+          <tr><td class="l" style="color:#5e5a52;">BASELINE</td><td class="l" style="color:#5e5a52;">—</td><td class="l" style="color:#9B968B;">QWEN3-32B</td><td style="color:#9B968B;">87.4</td><td style="color:#9B968B;">81.7</td><td style="color:#9B968B;">61.8</td><td style="color:#9B968B;">2.3</td><td style="color:#9B968B;">0.0</td><td style="color:#9B968B;">3.4</td><td style="color:#5e5a52;">—</td><td style="color:#5e5a52;">—</td><td></td></tr>
+          <tr><td class="l" style="color:#D6B85A; font-weight:600;">AFFINE-XXXI</td><td class="l">3</td><td class="l" style="color:#F5F2EA;">AFFINE-VERA6-5HBAW</td><td>78.5 <span style="color:#C0705A;">▼8.9</span></td><td>83.5 <span style="color:#6F9F7A;">▲1.8</span></td><td>62.9 <span style="color:#6F9F7A;">▲1.1</span></td><td>10.0 <span style="color:#6F9F7A;">▲7.7</span></td><td>7.0 <span style="color:#6F9F7A;">▲7.0</span></td><td>2.3 <span style="color:#C0705A;">▼1.1</span></td><td style="color:#9B968B;">06/16</td><td>592.0</td><td><span style="color:#5e5a52;">↓</span></td></tr>
+          <tr><td class="l" style="color:#9B968B;">AFFINE-XXX</td><td class="l">83</td><td class="l" style="color:#F5F2EA;">AFFINE-LENITOKORE-5DFCX</td><td>78.5 <span style="color:#C0705A;">▼8.9</span></td><td>84.2 <span style="color:#6F9F7A;">▲2.4</span></td><td>61.2 <span style="color:#C0705A;">▼0.6</span></td><td>11.0 <span style="color:#6F9F7A;">▲8.7</span></td><td>10.5 <span style="color:#6F9F7A;">▲10.5</span></td><td>1.1 <span style="color:#C0705A;">▼2.3</span></td><td style="color:#9B968B;">06/15</td><td>592.0</td><td><span style="color:#5e5a52;">↓</span></td></tr>
+          <tr><td class="l" style="color:#9B968B;">AFFINE-XXIX</td><td class="l">188</td><td class="l" style="color:#F5F2EA;">AFFINE-ANHSANGCUOIDUONGHAM…</td><td>82.8 <span style="color:#C0705A;">▼4.6</span></td><td>90.2 <span style="color:#6F9F7A;">▲8.5</span></td><td>63.5 <span style="color:#6F9F7A;">▲1.7</span></td><td>11.3 <span style="color:#6F9F7A;">▲9.0</span></td><td>10.5 <span style="color:#6F9F7A;">▲10.5</span></td><td>0.0 <span style="color:#C0705A;">▼3.4</span></td><td style="color:#9B968B;">06/10</td><td>592.0</td><td><span style="color:#5e5a52;">↓</span></td></tr>
+          <tr><td class="l" style="color:#9B968B;">AFFINE-XXVIII</td><td class="l">161</td><td class="l" style="color:#F5F2EA;">AFFINE-AFFINE-TOP-5GBTX</td><td style="color:#5e5a52;">—</td><td style="color:#5e5a52;">—</td><td style="color:#5e5a52;">—</td><td style="color:#5e5a52;">—</td><td style="color:#5e5a52;">—</td><td style="color:#5e5a52;">—</td><td style="color:#9B968B;">06/09</td><td>592.0</td><td><span style="color:#5e5a52;">↓</span></td></tr>
+          <tr><td class="l" style="color:#9B968B;">AFFINE-XXVII</td><td class="l">118</td><td class="l" style="color:#F5F2EA;">AFFINE-AF-CHAMP-5CAAY</td><td style="color:#5e5a52;">—</td><td style="color:#5e5a52;">—</td><td style="color:#5e5a52;">—</td><td style="color:#5e5a52;">—</td><td style="color:#5e5a52;">—</td><td style="color:#5e5a52;">—</td><td style="color:#9B968B;">06/08</td><td>592.0</td><td><span style="color:#5e5a52;">↓</span></td></tr>
+          <tr><td class="l" style="color:#9B968B;">AFFINE-XXVI</td><td class="l">175</td><td class="l" style="color:#F5F2EA;">AFFINE-HIPPO-MASTER-5D1NQ</td><td style="color:#5e5a52;">—</td><td style="color:#5e5a52;">—</td><td style="color:#5e5a52;">—</td><td style="color:#5e5a52;">—</td><td style="color:#5e5a52;">—</td><td style="color:#5e5a52;">—</td><td style="color:#9B968B;">06/07</td><td style="color:#5e5a52;">—</td><td><span style="color:#5e5a52;">↓</span></td></tr>
+          <tr><td class="l" style="color:#9B968B;">AFFINE-XXV</td><td class="l">147</td><td class="l" style="color:#F5F2EA;">AFFINE-0XBIDKSLJ2-5G8Z5</td><td style="color:#5e5a52;">—</td><td style="color:#5e5a52;">—</td><td style="color:#5e5a52;">—</td><td style="color:#5e5a52;">—</td><td style="color:#5e5a52;">—</td><td style="color:#5e5a52;">—</td><td style="color:#9B968B;">06/06</td><td style="color:#5e5a52;">—</td><td><span style="color:#5e5a52;">↓</span></td></tr>
+          <tr><td class="l" style="color:#9B968B;">AFFINE-XXIV</td><td class="l">172</td><td class="l" style="color:#F5F2EA;">AFFINE-HIPPO-MASTER-5CGQR</td><td style="color:#5e5a52;">—</td><td style="color:#5e5a52;">—</td><td style="color:#5e5a52;">—</td><td style="color:#5e5a52;">—</td><td style="color:#5e5a52;">—</td><td style="color:#5e5a52;">—</td><td style="color:#9B968B;">06/06</td><td style="color:#5e5a52;">—</td><td><span style="color:#5e5a52;">↓</span></td></tr>
+          <tr><td class="l" style="color:#9B968B;">AFFINE-XXIII</td><td class="l">92</td><td class="l" style="color:#F5F2EA;">AFFINE-YASIMELB-5GV49</td><td style="color:#5e5a52;">—</td><td style="color:#5e5a52;">—</td><td style="color:#5e5a52;">—</td><td style="color:#5e5a52;">—</td><td style="color:#5e5a52;">—</td><td style="color:#5e5a52;">—</td><td style="color:#9B968B;">06/05</td><td style="color:#5e5a52;">—</td><td><span style="color:#5e5a52;">↓</span></td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ENVIRONMENTS -->
+    <section data-reveal style="margin-top:96px;">
+      <div style="display:flex; align-items:center; gap:14px;">
+        <span style="font-size:11px; color:#5e5a52;">▾</span>
+        <span style="font-size:12px; font-weight:600; letter-spacing:0.1em; color:#D8D4C8;">ENVIRONMENTS</span>
+        <span style="flex:1; height:1px; background:rgba(245,242,234,0.14);"></span>
+      </div>
+      <table style="margin-top:32px;">
+        <thead><tr><th class="l">Environment</th><th class="l">Scoring</th><th class="l">Sampling</th><th class="l">Sampling mode</th><th class="l">Sampling count</th><th>Links</th></tr></thead>
+        <tbody>
+          <tr><td class="l"><span style="display:inline-block; width:18px; height:18px; line-height:18px; text-align:center; font-size:10px; color:#D8D4C8; border:1px solid rgba(245,242,234,0.2); border-radius:4px; margin-right:12px;">M</span>MEMORY</td><td class="l" style="color:#6F9F7A;">ON</td><td class="l" style="color:#6F9F7A;">ON</td><td class="l" style="color:#9B968B;">RANDOM</td><td class="l">100</td><td style="color:#5e5a52;">↗&nbsp;&nbsp;⧉</td></tr>
+          <tr><td class="l"><span style="display:inline-block; width:18px; height:18px; line-height:18px; text-align:center; font-size:10px; color:#D8D4C8; border:1px solid rgba(245,242,234,0.2); border-radius:4px; margin-right:12px;">N</span>NAVWORLD</td><td class="l" style="color:#6F9F7A;">ON</td><td class="l" style="color:#6F9F7A;">ON</td><td class="l" style="color:#9B968B;">RANDOM</td><td class="l">300</td><td style="color:#5e5a52;">↗&nbsp;&nbsp;⧉</td></tr>
+          <tr><td class="l"><span style="display:inline-block; width:18px; height:18px; line-height:18px; text-align:center; font-size:10px; color:#D8D4C8; border:1px solid rgba(245,242,234,0.2); border-radius:4px; margin-right:12px;">S</span>SWE</td><td class="l" style="color:#6F9F7A;">ON</td><td class="l" style="color:#6F9F7A;">ON</td><td class="l" style="color:#9B968B;">LATEST</td><td class="l">200</td><td style="color:#5e5a52;">↗&nbsp;&nbsp;⧉</td></tr>
+          <tr><td class="l"><span style="display:inline-block; width:18px; height:18px; line-height:18px; text-align:center; font-size:10px; color:#D8D4C8; border:1px solid rgba(245,242,234,0.2); border-radius:4px; margin-right:12px;">T</span>TERMINAL</td><td class="l" style="color:#6F9F7A;">ON</td><td class="l" style="color:#6F9F7A;">ON</td><td class="l" style="color:#9B968B;">RANDOM</td><td class="l">300</td><td style="color:#5e5a52;">↗&nbsp;&nbsp;⧉</td></tr>
+          <tr><td class="l"><span style="display:inline-block; width:18px; height:18px; line-height:18px; text-align:center; font-size:10px; color:#D8D4C8; border:1px solid rgba(245,242,234,0.2); border-radius:4px; margin-right:12px;">D</span>DISTILL</td><td class="l" style="color:#5e5a52;">OFF</td><td class="l" style="color:#6F9F7A;">ON</td><td class="l" style="color:#9B968B;">LATEST</td><td class="l">30</td><td style="color:#5e5a52;">↗&nbsp;&nbsp;⧉</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- LATEST CHALLENGE -->
+    <section data-reveal style="margin-top:96px;">
+      <div style="display:flex; align-items:center; gap:14px;">
+        <span style="font-size:11px; color:#5e5a52;">▾</span>
+        <span style="font-size:12px; font-weight:600; letter-spacing:0.1em; color:#D8D4C8;">LATEST CHALLENGE</span>
+        <span style="flex:1; height:1px; background:rgba(245,242,234,0.14);"></span>
+      </div>
+
+      <div style="margin-top:36px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px;">
+        <div style="font-size:11px; color:#9B968B;">3h ago&nbsp; ·&nbsp; 06/18 09:36</div>
+        <div style="font-size:13px; letter-spacing:0.04em;"><span style="color:#F5F2EA;">AFFINE-TOTAF-5DXZZ</span>&nbsp;&nbsp;<span style="color:#5e5a52;">vs.</span>&nbsp;&nbsp;<span style="color:#D6B85A;">AFFINE-XXXI</span></div>
+        <div style="font-size:10px; letter-spacing:0.12em; color:#C0705A; border:1px solid rgba(192,112,90,0.5); background:rgba(192,112,90,0.08); padding:5px 14px; border-radius:5px;">LOST</div>
+      </div>
+
+      <div style="margin-top:30px; display:grid; grid-template-columns:110px 1fr 70px 70px 60px 78px; gap:14px 18px; align-items:center; font-size:11px;">
+        <div style="color:#5e5a52; text-align:right; grid-column:3;">CHALLENGER</div><div style="color:#5e5a52; text-align:right;">CHAMPION</div><div style="color:#5e5a52; text-align:right;">SAMPLES</div><div></div>
+
+        <div style="color:#9B968B;">DISTILL ⓘ</div>
+        <div style="position:relative; height:7px; background:rgba(245,242,234,0.06); border-radius:2px;"><span style="position:absolute; left:0; top:0; bottom:0; width:11%; background:rgba(245,242,234,0.5); border-radius:2px;"></span><span style="position:absolute; left:10.5%; top:-3px; bottom:-3px; width:2px; background:#D6B85A;"></span></div>
+        <div style="text-align:right; color:#F5F2EA;">9.27</div><div style="text-align:right; color:#9B968B;">9.14</div><div style="text-align:right; color:#5e5a52;">33</div>
+        <div style="font-size:9px; letter-spacing:0.1em; color:#9B968B; border:1px solid rgba(245,242,234,0.18); padding:4px 0; border-radius:4px; text-align:center;">TIE</div>
+
+        <div style="color:#9B968B;">MEMORY</div>
+        <div style="position:relative; height:7px; background:rgba(245,242,234,0.06); border-radius:2px;"><span style="position:absolute; left:0; top:0; bottom:0; width:66%; background:rgba(245,242,234,0.5); border-radius:2px;"></span><span style="position:absolute; left:66.1%; top:-3px; bottom:-3px; width:2px; background:#D6B85A;"></span></div>
+        <div style="text-align:right; color:#F5F2EA;">66.06</div><div style="text-align:right; color:#9B968B;">66.11</div><div style="text-align:right; color:#5e5a52;">56</div>
+        <div style="font-size:9px; letter-spacing:0.1em; color:#9B968B; border:1px solid rgba(245,242,234,0.18); padding:4px 0; border-radius:4px; text-align:center;">TIE</div>
+
+        <div style="color:#9B968B;">NAVWORLD</div>
+        <div style="position:relative; height:7px; background:rgba(245,242,234,0.06); border-radius:2px;"><span style="position:absolute; left:0; top:0; bottom:0; width:53.5%; background:rgba(245,242,234,0.5); border-radius:2px;"></span><span style="position:absolute; left:55%; top:-3px; bottom:-3px; width:2px; background:#D6B85A;"></span></div>
+        <div style="text-align:right; color:#F5F2EA;">53.53</div><div style="text-align:right; color:#9B968B;">55.03</div><div style="text-align:right; color:#5e5a52;">300</div>
+        <div style="font-size:9px; letter-spacing:0.1em; color:#C0705A; border:1px solid rgba(192,112,90,0.45); background:rgba(192,112,90,0.06); padding:4px 0; border-radius:4px; text-align:center;">LOSE</div>
+
+        <div style="color:#9B968B;">SWE</div>
+        <div style="position:relative; height:7px; background:rgba(245,242,234,0.06); border-radius:2px;"><span style="position:absolute; left:0; top:0; bottom:0; width:57.7%; background:rgba(245,242,234,0.5); border-radius:2px;"></span><span style="position:absolute; left:59.5%; top:-3px; bottom:-3px; width:2px; background:#D6B85A;"></span></div>
+        <div style="text-align:right; color:#F5F2EA;">57.74</div><div style="text-align:right; color:#9B968B;">59.52</div><div style="text-align:right; color:#5e5a52;">168</div>
+        <div style="font-size:9px; letter-spacing:0.1em; color:#C0705A; border:1px solid rgba(192,112,90,0.45); background:rgba(192,112,90,0.06); padding:4px 0; border-radius:4px; text-align:center;">LOSE</div>
+
+        <div style="color:#9B968B;">TERMINAL</div>
+        <div style="position:relative; height:7px; background:rgba(245,242,234,0.06); border-radius:2px;"><span style="position:absolute; left:0; top:0; bottom:0; width:73.9%; background:rgba(245,242,234,0.5); border-radius:2px;"></span><span style="position:absolute; left:72.1%; top:-3px; bottom:-3px; width:2px; background:#D6B85A;"></span></div>
+        <div style="text-align:right; color:#F5F2EA;">73.94</div><div style="text-align:right; color:#9B968B;">72.08</div><div style="text-align:right; color:#5e5a52;">318</div>
+        <div style="font-size:9px; letter-spacing:0.1em; color:#9B968B; border:1px solid rgba(245,242,234,0.18); padding:4px 0; border-radius:4px; text-align:center;">TIE</div>
+      </div>
+    </section>
+
+    <!-- QUEUE -->
+    <section data-reveal style="margin-top:96px;">
+      <div style="display:flex; align-items:center; gap:14px;">
+        <span style="font-size:11px; color:#5e5a52;">▾</span>
+        <span style="font-size:12px; font-weight:600; letter-spacing:0.1em; color:#D8D4C8;">QUEUE</span>
+        <span style="flex:1; height:1px; background:rgba(245,242,234,0.14);"></span>
+        <span style="font-size:10px; letter-spacing:0.1em; color:#5e5a52;">0 PENDING</span>
+      </div>
+      <div style="margin-top:48px; text-align:center; font-size:12px; color:#5e5a52;">no active challengers right now.</div>
+    </section>
+
+    <!-- HISTORY -->
+    <section data-reveal style="margin-top:96px;">
+      <div style="display:flex; align-items:center; gap:14px;">
+        <span style="font-size:11px; color:#5e5a52;">▾</span>
+        <span style="font-size:12px; font-weight:600; letter-spacing:0.1em; color:#D8D4C8;">HISTORY</span>
+        <span style="flex:1; height:1px; background:rgba(245,242,234,0.14);"></span>
+      </div>
+      <table style="margin-top:32px;">
+        <thead><tr>
+          <th class="l">When</th><th class="l">UID</th><th class="l">Model</th><th class="l">Vs. Champion</th><th class="l">Verdict</th>
+          <th>Distill</th><th>Memory</th><th>Navworld</th><th>SWE</th><th>Terminal</th>
+        </tr></thead>
+        <tbody>
+          <tr><td class="l" style="color:#9B968B;">3h ago <span style="color:#5e5a52;">· 06/18 09:36</span></td><td class="l">87</td><td class="l" style="color:#F5F2EA;">AFFINE-TOTAF-5DXZZ</td><td class="l" style="color:#D6B85A;">AFFINE-XXXI</td><td class="l"><span style="font-size:9px; letter-spacing:0.1em; color:#C0705A; border:1px solid rgba(192,112,90,0.4); background:rgba(192,112,90,0.06); padding:3px 10px; border-radius:4px;">LOST</span></td><td>9.27 <span style="color:#5e5a52;">/</span> <span style="color:#D6B85A;">9.14</span></td><td>66.06 <span style="color:#5e5a52;">/</span> <span style="color:#D6B85A;">66.11</span></td><td>53.53 <span style="color:#5e5a52;">/</span> <span style="color:#D6B85A;">55.03</span></td><td>57.74 <span style="color:#5e5a52;">/</span> <span style="color:#D6B85A;">59.52</span></td><td>73.94 <span style="color:#5e5a52;">/</span> <span style="color:#D6B85A;">72.08</span></td></tr>
+          <tr><td class="l" style="color:#9B968B;">3h ago <span style="color:#5e5a52;">· 06/18 08:48</span></td><td class="l">120</td><td class="l" style="color:#F5F2EA;">AFFINE-EVEREST12-5DJYF</td><td class="l" style="color:#D6B85A;">AFFINE-XXXI</td><td class="l"><span style="font-size:9px; letter-spacing:0.1em; color:#C0705A; border:1px solid rgba(192,112,90,0.4); background:rgba(192,112,90,0.06); padding:3px 10px; border-radius:4px;">LOST</span></td><td>9.37 <span style="color:#5e5a52;">/</span> <span style="color:#D6B85A;">9.14</span></td><td>68.59 <span style="color:#5e5a52;">/</span> <span style="color:#D6B85A;">66.67</span></td><td>55.78 <span style="color:#5e5a52;">/</span> <span style="color:#D6B85A;">54.54</span></td><td>54.00 <span style="color:#5e5a52;">/</span> <span style="color:#D6B85A;">56.50</span></td><td>74.46 <span style="color:#5e5a52;">/</span> <span style="color:#D6B85A;">71.30</span></td></tr>
+          <tr><td class="l" style="color:#9B968B;">4h ago <span style="color:#5e5a52;">· 06/18 07:53</span></td><td class="l">113</td><td class="l" style="color:#F5F2EA;">AFFINE-TOK33LL02-5ENNA</td><td class="l" style="color:#D6B85A;">AFFINE-XXXI</td><td class="l"><span style="font-size:9px; letter-spacing:0.1em; color:#C0705A; border:1px solid rgba(192,112,90,0.4); background:rgba(192,112,90,0.06); padding:3px 10px; border-radius:4px;">LOST</span></td><td>9.36 <span style="color:#5e5a52;">/</span> <span style="color:#D6B85A;">9.14</span></td><td>68.62 <span style="color:#5e5a52;">/</span> <span style="color:#D6B85A;">66.73</span></td><td>56.30 <span style="color:#5e5a52;">/</span> <span style="color:#D6B85A;">55.16</span></td><td>54.95 <span style="color:#5e5a52;">/</span> <span style="color:#D6B85A;">57.92</span></td><td>73.63 <span style="color:#5e5a52;">/</span> <span style="color:#D6B85A;">72.14</span></td></tr>
+          <tr><td class="l" style="color:#9B968B;">5h ago <span style="color:#5e5a52;">· 06/18 07:06</span></td><td class="l">102</td><td class="l" style="color:#F5F2EA;">AFFINE-EVEREST12-5DCHB</td><td class="l" style="color:#D6B85A;">AFFINE-XXXI</td><td class="l"><span style="font-size:9px; letter-spacing:0.1em; color:#C0705A; border:1px solid rgba(192,112,90,0.4); background:rgba(192,112,90,0.06); padding:3px 10px; border-radius:4px;">LOST</span></td><td>9.32 <span style="color:#5e5a52;">/</span> <span style="color:#D6B85A;">9.14</span></td><td>68.22 <span style="color:#5e5a52;">/</span> <span style="color:#D6B85A;">66.67</span></td><td>53.75 <span style="color:#5e5a52;">/</span> <span style="color:#D6B85A;">55.40</span></td><td>54.98 <span style="color:#5e5a52;">/</span> <span style="color:#D6B85A;">55.45</span></td><td>72.68 <span style="color:#5e5a52;">/</span> <span style="color:#D6B85A;">70.94</span></td></tr>
+          <tr><td class="l" style="color:#9B968B;">6h ago <span style="color:#5e5a52;">· 06/18 06:11</span></td><td class="l">207</td><td class="l" style="color:#F5F2EA;">AFFINE-TOK33LL02-5HTWP</td><td class="l" style="color:#D6B85A;">AFFINE-XXXI</td><td class="l"><span style="font-size:9px; letter-spacing:0.1em; color:#C0705A; border:1px solid rgba(192,112,90,0.4); background:rgba(192,112,90,0.06); padding:3px 10px; border-radius:4px;">LOST</span></td><td>9.36 <span style="color:#5e5a52;">/</span> <span style="color:#D6B85A;">9.14</span></td><td>70.47 <span style="color:#5e5a52;">/</span> <span style="color:#D6B85A;">67.93</span></td><td>56.01 <span style="color:#5e5a52;">/</span> <span style="color:#D6B85A;">54.98</span></td><td>52.50 <span style="color:#5e5a52;">/</span> <span style="color:#D6B85A;">57.00</span></td><td>72.18 <span style="color:#5e5a52;">/</span> <span style="color:#D6B85A;">71.54</span></td></tr>
+          <tr><td class="l" style="color:#9B968B;">7h ago <span style="color:#5e5a52;">· 06/18 05:24</span></td><td class="l">2000</td><td class="l" style="color:#F5F2EA;">AFFINE-QWEN-SYSTE</td><td class="l" style="color:#D6B85A;">AFFINE-XXXI</td><td class="l"><span style="font-size:9px; letter-spacing:0.1em; color:#C0705A; border:1px solid rgba(192,112,90,0.4); background:rgba(192,112,90,0.06); padding:3px 10px; border-radius:4px;">LOST</span></td><td>11.66 <span style="color:#5e5a52;">/</span> <span style="color:#D6B85A;">9.14</span></td><td>11.85 <span style="color:#5e5a52;">/</span> <span style="color:#D6B85A;">67.13</span></td><td>25.70 <span style="color:#5e5a52;">/</span> <span style="color:#D6B85A;">54.86</span></td><td>34.26 <span style="color:#5e5a52;">/</span> <span style="color:#D6B85A;">56.02</span></td><td>63.25 <span style="color:#5e5a52;">/</span> <span style="color:#D6B85A;">70.52</span></td></tr>
+          <tr><td class="l" style="color:#9B968B;">8h ago <span style="color:#5e5a52;">· 06/18 04:31</span></td><td class="l">13</td><td class="l" style="color:#F5F2EA;">AFFINE-VERA6-5G1NE</td><td class="l" style="color:#D6B85A;">AFFINE-XXXI</td><td class="l"><span style="font-size:9px; letter-spacing:0.1em; color:#C0705A; border:1px solid rgba(192,112,90,0.4); background:rgba(192,112,90,0.06); padding:3px 10px; border-radius:4px;">LOST</span></td><td>9.42 <span style="color:#5e5a52;">/</span> <span style="color:#D6B85A;">9.14</span></td><td>68.32 <span style="color:#5e5a52;">/</span> <span style="color:#D6B85A;">66.33</span></td><td>54.41 <span style="color:#5e5a52;">/</span> <span style="color:#D6B85A;">55.03</span></td><td>52.74 <span style="color:#5e5a52;">/</span> <span style="color:#D6B85A;">54.23</span></td><td>74.49 <span style="color:#5e5a52;">/</span> <span style="color:#D6B85A;">71.44</span></td></tr>
+          <tr><td class="l" style="color:#9B968B;">22h ago <span style="color:#5e5a52;">· 06/17 13:46</span></td><td class="l">108</td><td class="l" style="color:#F5F2EA;">AFFINE-OSIRIO77-5DVFH</td><td class="l" style="color:#D6B85A;">AFFINE-XXXI</td><td class="l"><span style="font-size:9px; letter-spacing:0.1em; color:#C0705A; border:1px solid rgba(192,112,90,0.4); background:rgba(192,112,90,0.06); padding:3px 10px; border-radius:4px;">LOST</span></td><td>6.38 <span style="color:#5e5a52;">/</span> <span style="color:#D6B85A;">6.38</span></td><td>66.24 <span style="color:#5e5a52;">/</span> <span style="color:#D6B85A;">65.78</span></td><td>52.03 <span style="color:#5e5a52;">/</span> <span style="color:#D6B85A;">52.22</span></td><td>54.50 <span style="color:#5e5a52;">/</span> <span style="color:#D6B85A;">59.50</span></td><td>72.27 <span style="color:#5e5a52;">/</span> <span style="color:#D6B85A;">72.82</span></td></tr>
+          <tr><td class="l" style="color:#9B968B;">1d ago <span style="color:#5e5a52;">· 06/17 12:30</span></td><td class="l">244</td><td class="l" style="color:#F5F2EA;">AFFINE-OSIRIO77-5HPQX</td><td class="l" style="color:#D6B85A;">AFFINE-XXXI</td><td class="l"><span style="font-size:9px; letter-spacing:0.1em; color:#C0705A; border:1px solid rgba(192,112,90,0.4); background:rgba(192,112,90,0.06); padding:3px 10px; border-radius:4px;">LOST</span></td><td>6.56 <span style="color:#5e5a52;">/</span> <span style="color:#D6B85A;">6.38</span></td><td>68.76 <span style="color:#5e5a52;">/</span> <span style="color:#D6B85A;">65.68</span></td><td>51.36 <span style="color:#5e5a52;">/</span> <span style="color:#D6B85A;">53.95</span></td><td>57.75 <span style="color:#5e5a52;">/</span> <span style="color:#D6B85A;">57.75</span></td><td>74.36 <span style="color:#5e5a52;">/</span> <span style="color:#D6B85A;">74.45</span></td></tr>
+          <tr><td class="l" style="color:#9B968B;">1d ago <span style="color:#5e5a52;">· 06/17 11:34</span></td><td class="l">81</td><td class="l" style="color:#F5F2EA;">AFFINE-DINO-MASTER-5FNKD</td><td class="l" style="color:#D6B85A;">AFFINE-XXXI</td><td class="l"><span style="font-size:9px; letter-spacing:0.1em; color:#C0705A; border:1px solid rgba(192,112,90,0.4); background:rgba(192,112,90,0.06); padding:3px 10px; border-radius:4px;">LOST</span></td><td>6.38 <span style="color:#5e5a52;">/</span> <span style="color:#D6B85A;">6.38</span></td><td>69.86 <span style="color:#5e5a52;">/</span> <span style="color:#D6B85A;">65.80</span></td><td>51.50 <span style="color:#5e5a52;">/</span> <span style="color:#D6B85A;">53.41</span></td><td>56.50 <span style="color:#5e5a52;">/</span> <span style="color:#D6B85A;">60.00</span></td><td>72.90 <span style="color:#5e5a52;">/</span> <span style="color:#D6B85A;">73.14</span></td></tr>
+          <tr><td class="l" style="color:#9B968B;">1d ago <span style="color:#5e5a52;">· 06/17 03:10</span></td><td class="l">73</td><td class="l" style="color:#F5F2EA;">AFFINE-TOTAF-5CYTO</td><td class="l" style="color:#D6B85A;">AFFINE-XXXI</td><td class="l"><span style="font-size:9px; letter-spacing:0.1em; color:#C0705A; border:1px solid rgba(192,112,90,0.4); background:rgba(192,112,90,0.06); padding:3px 10px; border-radius:4px;">LOST</span></td><td>6.37 <span style="color:#5e5a52;">/</span> <span style="color:#D6B85A;">6.38</span></td><td style="color:#5e5a52;">—</td><td>53.23 <span style="color:#5e5a52;">/</span> <span style="color:#D6B85A;">54.22</span></td><td>60.14 <span style="color:#5e5a52;">/</span> <span style="color:#D6B85A;">64.34</span></td><td>72.38 <span style="color:#5e5a52;">/</span> <span style="color:#D6B85A;">74.58</span></td></tr>
+          <tr><td class="l" style="color:#9B968B;">1d ago <span style="color:#5e5a52;">· 06/16 23:04</span></td><td class="l">157</td><td class="l" style="color:#F5F2EA;">AFFINE-HIPPO-MASTER-5ECEY</td><td class="l" style="color:#D6B85A;">AFFINE-XXXI</td><td class="l"><span style="font-size:9px; letter-spacing:0.1em; color:#C0705A; border:1px solid rgba(192,112,90,0.4); background:rgba(192,112,90,0.06); padding:3px 10px; border-radius:4px;">LOST</span></td><td>6.39 <span style="color:#5e5a52;">/</span> <span style="color:#D6B85A;">6.38</span></td><td>61.67 <span style="color:#5e5a52;">/</span> <span style="color:#D6B85A;">65.82</span></td><td>53.28 <span style="color:#5e5a52;">/</span> <span style="color:#D6B85A;">54.09</span></td><td>57.50 <span style="color:#5e5a52;">/</span> <span style="color:#D6B85A;">58.00</span></td><td>74.18 <span style="color:#5e5a52;">/</span> <span style="color:#D6B85A;">73.67</span></td></tr>
+          <tr><td class="l" style="color:#9B968B;">1d ago <span style="color:#5e5a52;">· 06/16 19:23</span></td><td class="l">90</td><td class="l" style="color:#F5F2EA;">AFFINE-ORONOCRIS-5HBGK</td><td class="l" style="color:#D6B85A;">AFFINE-XXXI</td><td class="l"><span style="font-size:9px; letter-spacing:0.1em; color:#C0705A; border:1px solid rgba(192,112,90,0.4); background:rgba(192,112,90,0.06); padding:3px 10px; border-radius:4px;">LOST</span></td><td>7.67 <span style="color:#5e5a52;">/</span> <span style="color:#D6B85A;">7.71</span></td><td>67.29 <span style="color:#5e5a52;">/</span> <span style="color:#D6B85A;">67.98</span></td><td>51.81 <span style="color:#5e5a52;">/</span> <span style="color:#D6B85A;">51.80</span></td><td>48.76 <span style="color:#5e5a52;">/</span> <span style="color:#D6B85A;">55.72</span></td><td>73.06 <span style="color:#5e5a52;">/</span> <span style="color:#D6B85A;">70.97</span></td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <div style="height:120px;"></div>
+  </div>
+
+  <footer style="border-top:1px solid rgba(245,242,234,0.1); padding:64px 40px 60px; text-align:center;">
+    <div style="display:flex; align-items:center; justify-content:center; gap:10px;">
+      <svg width="16" height="14" viewBox="0 0 24 22" fill="none"><path d="M4 20 L12 3 L20 20" stroke="#D6B85A" stroke-width="2.2" stroke-linejoin="miter" stroke-linecap="butt"/></svg>
+      <span style="font-family:'Fira Code','DM Mono',monospace; font-size:12px; font-weight:600; letter-spacing:0.14em; color:#D8D4C8;">AFFINE</span>
+    </div>
+    <div style="margin-top:22px; font-family:'Fira Code','DM Mono',monospace; font-size:11px; letter-spacing:0.06em; color:#9B968B;">A challenger is inherited only when it beats the champion on every environment at once.</div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() {
+    document.body.classList.add('reveal-on');
+    requestAnimationFrame(() => {
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); }
+        });
+      }, { threshold: 0.06, rootMargin: '0px 0px -6% 0px' });
+      document.querySelectorAll('[data-reveal]').forEach((el) => obs.observe(el));
+    });
+  }
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>
