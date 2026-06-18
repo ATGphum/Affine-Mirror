@@ -102,6 +102,14 @@
     footer[style*="padding: 72px 32px 60px"] { padding: 44px 16px 40px !important; }
     p[style*="font-size: 18px"] { font-size: 15px !important; }
   }
+  /* ===== Normalized header: identical on every page (authoritative — overrides the per-page mobile nav values above) ===== */
+  @media (max-width: 760px) {
+    header[style*="position: fixed"] { padding: 14px 16px !important; }
+    header[style*="position: fixed"] nav { gap: 16px !important; flex-wrap: wrap; justify-content: center !important; }
+    header[style*="position: fixed"] nav a,
+    header[style*="position: fixed"] nav span { font-size: 9px !important; letter-spacing: 0.05em !important; }
+    header[style*="position: fixed"] svg { width: 22px !important; height: 20px !important; }
+  }
 </style>
 </helmet>
 <div style="background:#050505; color:#F5F2EA; font-family:'Haffer','HafferSQ','Helvetica Neue','Helvetica',Arial,sans-serif; min-height:100vh; -webkit-font-smoothing:antialiased; overflow-x:hidden;">
