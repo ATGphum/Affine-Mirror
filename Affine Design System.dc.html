@@ -28,15 +28,19 @@
        Universal selector excludes the nav's '1fr auto 1fr'. */
     [style*="grid-template-columns: 1fr 1"] { grid-template-columns: 1fr !important; }
 
-    /* C. Neutralize the 1px divider column when the 1fr 1px 1fr layout is stacked. */
-    [style*="grid-template-columns: 1fr 1px 1fr"] > [style*="background: rgba(245,242,234,0.12)"] {
+    /* C. Neutralize the 1px divider column when the 1fr 1px 1fr layout is stacked.
+       NB: the browser serializes the inline color with spaces, so match that form. */
+    [style*="grid-template-columns: 1fr 1px 1fr"] > [style*="background: rgba(245, 242, 234, 0.12)"] {
       display: none !important;
     }
-    /* Remove the side padding the divider cells used to clear the hairline. */
-    [style*="padding: 0 40px 0 0"],
-    [style*="padding: 0 0 0 40px"],
-    [style*="padding: 0 36px 0 0"],
-    [style*="padding: 0 0 0 36px"] { padding-left: 0 !important; padding-right: 0 !important; }
+    /* Remove the divider-clearing side padding so the two stacked cells align to the
+       SAME left edge: left-aligned lists (Gold Rule) go flush-left, and centered
+       cards (The Mark) share one center axis instead of one biasing left, one right.
+       NB: the DOM serializes these in px form, e.g. 'padding: 0px 40px 0px 0px'. */
+    [style*="padding: 0px 40px 0px 0px"],
+    [style*="padding: 0px 0px 0px 40px"],
+    [style*="padding: 0px 36px 0px 0px"],
+    [style*="padding: 0px 0px 0px 36px"] { padding-left: 0 !important; padding-right: 0 !important; }
 
     /* C. Stack flex "label | content" section rows. These use flexbox (not grid),
        so the grid-collapse above misses them; with nowrap the content child
