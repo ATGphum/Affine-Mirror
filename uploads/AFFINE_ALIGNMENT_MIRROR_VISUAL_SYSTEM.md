@@ -181,7 +181,7 @@ The palette must be nearly monochrome.
 ### Core Tokens
 
 ```text
-paper-black       #050505
+paper-black       #1c1c1c
 void-black        #000000
 ink-white         #F5F2EA
 paper-white       #FFFFFF
