@@ -97,7 +97,7 @@ Rules:
 
 - minimum size: 24px
 - preferred navigation size: 28–32px
-- use `gold-validation`
+- use `identity-gold`
 - do not animate continuously
 - do not treat its presence as a validated-state indicator
 
@@ -125,7 +125,7 @@ Rules:
 - preferred size: 16–24px
 - use a tuned asset for production
 - thicken the stroke below 24px
-- use `gold-validation` or `ink-white`
+- use `identity-gold` or `ink-white`
 - do not place it in a circle by default
 - do not repeat it as a pattern
 
@@ -152,7 +152,9 @@ quiet-white       #88847B
 faint-white       rgba(245,242,234,0.18)
 hairline-white    rgba(245,242,234,0.10)
 
-gold-validation   #D6B85A
+affine-gold       #D6B85A
+identity-gold     affine-gold
+validation-gold   affine-gold
 gold-muted        #A48B3B
 gold-faint        rgba(214,184,90,0.20)
 
@@ -160,6 +162,8 @@ error-red         #C0705A
 success-green     #6F9F7A
 info-blue         #7C9AB8
 ```
+
+The two gold channel tokens share `affine-gold`'s value while remaining semantically distinct in code.
 
 Do not introduce undocumented text colors. In particular, do not use `#5E5A52` or darker gray for text on `paper-black`.
 
@@ -171,7 +175,7 @@ Do not introduce undocumented text colors. In particular, do not use `#5E5A52` o
 | `soft-white` | 11.5:1 | secondary text, navigation |
 | `muted-white` | 5.8:1 | captions, metadata, body-support text |
 | `quiet-white` | 4.6:1 | lowest-priority normal text |
-| `gold-validation` | 8.8:1 | earned state and identity mark |
+| `affine-gold` | 8.8:1 | earned state (`validation-gold`) and identity mark (`identity-gold`) |
 | `gold-muted` | 5.1:1 | secondary gold labels |
 | `error-red` | 4.6:1 | failure text with an icon or label |
 | `success-green` | 5.6:1 | positive delta with an icon or label |
@@ -181,14 +185,14 @@ Opacity tokens are for lines, fills, and non-text decoration unless the resultin
 
 ### Gold Channels
 
-Gold is permitted in two channels.
+Gold is permitted in two channels. Both resolve to `affine-gold`.
 
-**Identity gold**
+**Identity gold (`identity-gold`)**
 
 - everyday Affine mark
 - Lambda signature
 
-**Validation gold**
+**Validation gold (`validation-gold`)**
 
 - validated result
 - selected candidate
@@ -544,6 +548,8 @@ inherit(K) iff
   and at least one required score improves
 ```
 
+This is the Doctrine's simplified illustrative rule, not the production acceptance logic. Production comparison is statistical; see the Doctrine's Canonical Proof Example.
+
 The figure should make simultaneous evaluation visible. Do not reduce the mechanism to an unexplained funnel or glowing node.
 
 ## Components
@@ -614,7 +620,7 @@ charting rule. Its encoding is fixed:
 - hollow outline: the inherited level, carried from the replaced champion
 - solid fill: what the generation earned — the delta and only the delta
 - a generation that earned nothing is entirely hollow; that is information, not a gap
-- `gold-validation`: the current champion generation and its earned deltas
+- `validation-gold`: the current champion generation and its earned deltas
 - `gold-muted`: historical earned deltas
 - value labels in `ink-white`; ties as a dim dash, never a zero
 - an append-only horizontal strip, chronological left to right, scrolled to the current champion on load, scrolling inside its own region
@@ -650,7 +656,7 @@ These are release requirements, not suggestions.
 - diagrams have captions and alternative descriptions
 - charts have a text or tabular equivalent
 - headings follow a logical hierarchy
-- mobile menu is keyboard and screen-reader operable
+- modal surfaces, including the mobile menu, contain focus, render the background inert, and restore focus on close
 - content remains understandable with CSS animation disabled
 - validation, failure, and improvement never rely on color alone
 

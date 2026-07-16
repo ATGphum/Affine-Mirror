@@ -178,6 +178,9 @@ class Component extends DCLogic {
       ov.classList.toggle('open', open);
       navBtn()?.setAttribute('aria-expanded', String(open));
       document.body.style.overflow = open ? 'hidden' : '';
+      Array.from(ov.parentElement.children).forEach((el) => {
+        if (el !== ov) { open ? el.setAttribute('inert', '') : el.removeAttribute('inert'); }
+      });
       (open ? ov.querySelector('.nav-close') : navBtn())?.focus();
     };
     document.addEventListener('click', (e) => {
@@ -186,7 +189,15 @@ class Component extends DCLogic {
       else if (e.target.closest('#nav-overlay a')) setNav(false);
     });
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && navOverlay()?.classList.contains('open')) setNav(false);
+      const ov = navOverlay();
+      if (!ov || !ov.classList.contains('open')) return;
+      if (e.key === 'Escape') { setNav(false); return; }
+      if (e.key !== 'Tab') return;
+      const focusables = ov.querySelectorAll('a, button');
+      const first = focusables[0], last = focusables[focusables.length - 1];
+      if (!ov.contains(document.activeElement)) { e.preventDefault(); first.focus(); }
+      else if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
     });
   }
   renderVals() { return {}; }
