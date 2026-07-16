@@ -17,6 +17,17 @@
   header nav a:hover { color: #F5F2EA !important; }
   header nav a { display: inline-flex; align-items: center; min-height: 44px; }
   :where(a, button, input, select, textarea, [tabindex]):focus-visible { outline: 2px solid #F5F2EA; outline-offset: 4px; }
+
+  .nav-menu-btn { display: none; font-family: 'Fira Code','DM Mono',monospace; font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #F5F2EA; background: none; border: none; cursor: pointer; padding: 0; min-height: 44px; align-items: center; }
+  #nav-overlay { position: fixed; inset: 0; z-index: 60; background: #1C1C1C; display: none; flex-direction: column; align-items: center; justify-content: center; gap: 44px; }
+  #nav-overlay.open { display: flex; }
+  #nav-overlay a { font-family: 'Fira Code','DM Mono',monospace; font-size: 13px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #D8D4C8; }
+  #nav-overlay a[aria-current="page"] { color: #F5F2EA; border-bottom: 1px solid #F5F2EA; padding-bottom: 4px; }
+  #nav-overlay .nav-close { position: absolute; top: 18px; right: 16px; display: inline-flex; }
+  @media (max-width: 760px) {
+    header nav { display: none !important; }
+    .nav-menu-btn { display: inline-flex; }
+  }
   @keyframes markIn { from { opacity: 0; transform: scale(0.965); } to { opacity: 1; transform: scale(1); } }
   @keyframes spinY { 0%, 100% { transform: rotateY(42deg); } 50% { transform: rotateY(-42deg); } }
   @keyframes spinX { 0%, 100% { transform: rotateX(-46deg); } 50% { transform: rotateX(46deg); } }
@@ -126,8 +137,18 @@
       <a href="Affine About.dc.html" style="font-family:'Fira Code','DM Mono',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:11px; font-weight:500; letter-spacing:0.08em; text-transform:uppercase; color:#D8D4C8; text-decoration:none;">Manifesto</a>
       <a href="Affine Dashboard.dc.html" style="font-family:'Fira Code','DM Mono',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:11px; font-weight:500; letter-spacing:0.08em; text-transform:uppercase; color:#D8D4C8; text-decoration:none;">Dashboard</a>
     </nav>
-    <div style="justify-self:end;"></div>
+    <div style="grid-column:3; justify-self:end; pointer-events:auto;"><button class="nav-menu-btn" type="button" aria-expanded="false" aria-controls="nav-overlay">Menu</button></div>
   </header>
+
+  <div id="nav-overlay" role="dialog" aria-modal="true" aria-label="Navigation">
+    <button class="nav-menu-btn nav-close" type="button" aria-label="Close menu">Close</button>
+    <a href="index.html" aria-current="page">Home</a>
+    <a href="Affine Design System.dc.html">Design System</a>
+    <a href="Affine Rationale.dc.html">Rationale</a>
+    <a href="Affine About.dc.html">Manifesto</a>
+    <a href="Affine Dashboard.dc.html">Dashboard</a>
+  </div>
+
 
   <section style="min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:120px 24px 80px; box-sizing:border-box;">
     <div class="mark-wrap" role="img" aria-label="Affine mark" style="position:relative; width:clamp(250px,42vw,460px); aspect-ratio:1/1; display:flex; align-items:center; justify-content:center; perspective:1000px; animation:markIn 1.8s ease both;">
@@ -149,6 +170,25 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
+  componentDidMount() {
+    const navOverlay = () => document.getElementById('nav-overlay');
+    const navBtn = () => document.querySelector('header .nav-menu-btn');
+    const setNav = (open) => {
+      const ov = navOverlay(); if (!ov) return;
+      ov.classList.toggle('open', open);
+      navBtn()?.setAttribute('aria-expanded', String(open));
+      document.body.style.overflow = open ? 'hidden' : '';
+      (open ? ov.querySelector('.nav-close') : navBtn())?.focus();
+    };
+    document.addEventListener('click', (e) => {
+      if (e.target.closest('#nav-overlay .nav-close')) setNav(false);
+      else if (e.target.closest('header .nav-menu-btn')) setNav(true);
+      else if (e.target.closest('#nav-overlay a')) setNav(false);
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navOverlay()?.classList.contains('open')) setNav(false);
+    });
+  }
   renderVals() { return {}; }
 }
 </script>
