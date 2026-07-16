@@ -31,10 +31,14 @@ Strategy and visual rules, written to stand alone from any prior Affine project:
   — strategy, message, posture, page intent, and review criteria.
 - [`uploads/AFFINE_ALIGNMENT_MIRROR_VISUAL_SYSTEM.md`](uploads/AFFINE_ALIGNMENT_MIRROR_VISUAL_SYSTEM.md)
   — color, type, layout, components, page structure, and implementation rules.
+- [`uploads/BITTENSOR_REFERENCE_2026-06-18.md`](uploads/BITTENSOR_REFERENCE_2026-06-18.md)
+  — dated screenshots, observations, and approximate measurements for the
+  external Bittensor reference used by this version of the direction.
 
 ### Assets
 
-- `assets/` — the Affine brand mark (`affine-mark.png`, `affine-mark-clean.png`).
+- `assets/` — the full-spectrum monument (`affine-mark.png`,
+  `affine-mark-clean.png`) and everyday gold mark (`affine-mark-gold.png`).
 - `uploads/` — reference images and the doctrine docs.
 - `.thumbnail` — preview image (PNG).
 
@@ -61,3 +65,7 @@ Restraint is the design. The direction mirrors Bittensor's seriousness, spacing,
 and protocol-paper rhythm, and translates it into Affine's opposite pole. See the
 doctrine for where this design mirrors Bittensor and where it deliberately
 departs.
+
+The full-spectrum monument is the contained exception to the nearly monochrome
+system: it represents unresolved multiplicity. The flat gold mark is everyday
+identity; gold elsewhere is reserved for validated or inherited state.

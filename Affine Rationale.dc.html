@@ -15,8 +15,15 @@
   html, body { margin: 0; padding: 0; background: #1c1c1c; }
   ::selection { background: rgba(214,184,90,0.30); color: #F5F2EA; }
   a { text-decoration: none; }
-  body.reveal-on [data-reveal] { opacity: 0; transform: translateY(16px); transition: opacity 1s ease, transform 1s ease; }
+  header nav a:hover { color: #F5F2EA !important; }
+  header nav a, header nav span { display: inline-flex; align-items: center; min-height: 44px; }
+  :where(a, button, input, select, textarea, [tabindex]):focus-visible { outline: 2px solid #F5F2EA; outline-offset: 4px; }
+  body.reveal-on [data-reveal] { opacity: 0; transform: translateY(16px); transition: opacity 0.6s cubic-bezier(0.22,1,0.36,1), transform 0.6s cubic-bezier(0.22,1,0.36,1); }
   body.reveal-on [data-reveal].in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+    body.reveal-on [data-reveal] { opacity: 1 !important; transform: none !important; }
+  }
 
   /* ===== Mobile responsive overrides (desktop unchanged) ===== */
   @media (max-width: 760px) {
@@ -54,7 +61,7 @@
     }
     nav[style*="gap: 38px"] a,
     nav[style*="gap: 38px"] span {
-      font-size: 9px !important;
+      font-size: 10px !important;
       letter-spacing: 0.04em !important;
     }
 
@@ -114,7 +121,7 @@
     header[style*="position: fixed"] { padding: 14px 16px !important; }
     header[style*="position: fixed"] nav { gap: 16px !important; flex-wrap: wrap; justify-content: center !important; }
     header[style*="position: fixed"] nav a,
-    header[style*="position: fixed"] nav span { font-size: 9px !important; letter-spacing: 0.05em !important; }
+    header[style*="position: fixed"] nav span { font-size: 10px !important; letter-spacing: 0.05em !important; }
     header[style*="position: fixed"] svg { width: 22px !important; height: 20px !important; }
   }
 </style>
@@ -129,7 +136,7 @@
     </div>
     <nav style="justify-self:center; display:flex; gap:38px; pointer-events:auto;">
       <a href="Affine Design System.dc.html" style="font-family:'Fira Code','DM Mono',monospace; font-size:11px; font-weight:500; letter-spacing:0.08em; text-transform:uppercase; color:#D8D4C8;">Design System</a>
-      <span style="font-family:'Fira Code','DM Mono',monospace; font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:#D6B85A; cursor:default;">Rationale</span>
+      <span aria-current="page" style="font-family:'Fira Code','DM Mono',monospace; font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:#F5F2EA; border-bottom:1px solid #F5F2EA; padding-bottom:4px; cursor:default;">Rationale</span>
       <a href="Affine About.dc.html" style="font-family:'Fira Code','DM Mono',monospace; font-size:11px; font-weight:500; letter-spacing:0.08em; text-transform:uppercase; color:#D8D4C8;">Manifesto</a>
       <a href="Affine Dashboard.dc.html" style="font-family:'Fira Code','DM Mono',monospace; font-size:11px; font-weight:500; letter-spacing:0.08em; text-transform:uppercase; color:#D8D4C8;">Dashboard</a>
     </nav>
@@ -161,8 +168,8 @@
 
     <div data-reveal style="margin-top:64px;">
       <div style="display:grid; grid-template-columns:1fr 1fr; border-bottom:1px solid rgba(245,242,234,0.12); padding-bottom:14px;">
-        <div style="font-family:'Fira Code',monospace; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:#5e5a52;">Bittensor</div>
-        <div style="font-family:'Fira Code',monospace; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:#8F7832; padding-left:32px;">Affine</div>
+        <div style="font-family:'Fira Code',monospace; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:#88847B;">Bittensor</div>
+        <div style="font-family:'Fira Code',monospace; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:#A48B3B; padding-left:32px;">Affine</div>
       </div>
       <div style="display:grid; grid-template-columns:1fr 1fr; padding:18px 0; border-bottom:1px solid rgba(245,242,234,0.08);"><div style="font-size:16px; color:#9B968B;">The incentive layer</div><div style="font-size:16px; color:#F5F2EA; padding-left:32px;">The alignment layer</div></div>
       <div style="display:grid; grid-template-columns:1fr 1fr; padding:18px 0; border-bottom:1px solid rgba(245,242,234,0.08);"><div style="font-size:16px; color:#9B968B;">Rewards production</div><div style="font-size:16px; color:#F5F2EA; padding-left:32px;">Validates inheritance</div></div>
@@ -181,21 +188,22 @@ AFFINE     =  ALIGNMENT</div>
   <section style="max-width:720px; margin:0 auto; padding:128px 32px 0; box-sizing:border-box;">
     <div data-reveal style="font-family:'Fira Code','DM Mono',monospace; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:#9B968B; text-align:center;">02&nbsp;/&nbsp;What&nbsp;Affine&nbsp;Is</div>
     <div data-reveal style="margin-top:56px; max-width:620px; margin-left:auto; margin-right:auto; text-align:center; font-size:clamp(18px,2.1vw,21px); font-weight:500; line-height:1.5; color:#F5F2EA;">The mechanism through which distributed intelligence becomes cumulative — aligning independent capabilities through evaluation pressure, validation grammar, inheritance, and composition.</div>
+    <div data-reveal style="margin-top:28px; max-width:600px; margin-left:auto; margin-right:auto; text-align:center; font-size:15px; line-height:1.75; color:#9B968B;">Here, alignment has a bounded meaning: a candidate satisfies the shared evaluation and validity conditions required to become part of the inherited frontier. It is not a claim that one benchmark proves every moral or general meaning of AI alignment.</div>
 
     <div data-reveal style="margin-top:72px; display:grid; grid-template-columns:1fr 1px 1fr; gap:0;">
       <div style="padding:0 36px 0 0;">
-        <div style="font-family:'Fira Code',monospace; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:#8F7832;">It is</div>
+        <div style="font-family:'Fira Code',monospace; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:#A48B3B;">It is</div>
         <div style="margin-top:20px; font-size:15px; line-height:2; color:#D8D4C8;">A mechanism for cumulative intelligence<br>An evaluation and validation grammar<br>A layer for inheritance and composition<br>A way to decide what becomes foundation</div>
       </div>
       <div style="background:rgba(245,242,234,0.12);"></div>
       <div style="padding:0 0 0 36px;">
-        <div style="font-family:'Fira Code',monospace; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:#5e5a52;">It is not</div>
+        <div style="font-family:'Fira Code',monospace; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:#88847B;">It is not</div>
         <div style="margin-top:20px; font-size:15px; line-height:2; color:#9B968B;">A single model<br>A research lab<br>A passive marketplace<br>A chatbot or social network<br>A generic AI protocol or dashboard skin</div>
       </div>
     </div>
 
     <div data-reveal style="margin-top:104px; max-width:600px; margin-left:auto; margin-right:auto;">
-      <div style="font-family:'Fira Code',monospace; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:#5e5a52; text-align:center;">It answers</div>
+      <div style="font-family:'Fira Code',monospace; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:#88847B; text-align:center;">It answers</div>
       <div style="margin-top:44px; text-align:center; font-size:19px; line-height:2.7; color:#D8D4C8; letter-spacing:-0.005em;">What was produced?<br>What was evaluated?<br>What improved, and what failed?<br>What should be inherited?<br>What should be replaced?<br>What composes with what?<br><span style="color:#F5F2EA;">What becomes the new frontier?</span></div>
     </div>
   </section>
@@ -206,12 +214,20 @@ AFFINE     =  ALIGNMENT</div>
     <div data-reveal style="margin-top:24px; max-width:600px; margin-left:auto; margin-right:auto; text-align:center; font-size:16px; line-height:1.75; color:#9B968B;">If a design cannot explain how something enters, gets evaluated, resolves, and carries forward, it is probably not Affine.</div>
 
     <div data-reveal style="margin-top:64px; max-width:620px; margin-left:auto; margin-right:auto;">
-      <div style="display:flex; gap:24px; padding:18px 0; border-top:1px solid rgba(245,242,234,0.08);"><div style="font-family:'Fira Code',monospace; font-size:12px; color:#5e5a52; flex:none; width:24px;">00</div><div style="font-family:'Fira Code',monospace; font-size:13px; letter-spacing:0.04em; color:#D8D4C8; flex:none; width:96px;">DIVERGE</div><div style="font-size:15px; line-height:1.6; color:#9B968B;">Independent capabilities enter the field.</div></div>
-      <div style="display:flex; gap:24px; padding:18px 0; border-top:1px solid rgba(245,242,234,0.08);"><div style="font-family:'Fira Code',monospace; font-size:12px; color:#5e5a52; flex:none; width:24px;">01</div><div style="font-family:'Fira Code',monospace; font-size:13px; letter-spacing:0.04em; color:#D8D4C8; flex:none; width:96px;">EVALUATE</div><div style="font-size:15px; line-height:1.6; color:#9B968B;">Shared tests and judgments make them comparable.</div></div>
-      <div style="display:flex; gap:24px; padding:18px 0; border-top:1px solid rgba(245,242,234,0.08);"><div style="font-family:'Fira Code',monospace; font-size:12px; color:#5e5a52; flex:none; width:24px;">02</div><div style="font-family:'Fira Code',monospace; font-size:13px; letter-spacing:0.04em; color:#D8D4C8; flex:none; width:96px;">ALIGN</div><div style="font-size:15px; line-height:1.6; color:#9B968B;">Pressure reveals what serves the whole, not the part.</div></div>
-      <div style="display:flex; gap:24px; padding:18px 0; border-top:1px solid rgba(245,242,234,0.08);"><div style="font-family:'Fira Code',monospace; font-size:12px; color:#5e5a52; flex:none; width:24px;">03</div><div style="font-family:'Fira Code',monospace; font-size:13px; letter-spacing:0.04em; color:#D8D4C8; flex:none; width:96px;">RESOLVE</div><div style="font-size:15px; line-height:1.6; color:#9B968B;">Useful paths become clearer than weak ones.</div></div>
-      <div style="display:flex; gap:24px; padding:18px 0; border-top:1px solid rgba(245,242,234,0.08);"><div style="font-family:'Fira Code',monospace; font-size:12px; color:#8F7832; flex:none; width:24px;">04</div><div style="font-family:'Fira Code',monospace; font-size:13px; letter-spacing:0.04em; color:#D6B85A; flex:none; width:96px;">INHERIT</div><div style="font-size:15px; line-height:1.6; color:#D8D4C8;">Validated progress becomes the next baseline.</div></div>
-      <div style="display:flex; gap:24px; padding:18px 0; border-top:1px solid rgba(245,242,234,0.08); border-bottom:1px solid rgba(245,242,234,0.08);"><div style="font-family:'Fira Code',monospace; font-size:12px; color:#5e5a52; flex:none; width:24px;">05</div><div style="font-family:'Fira Code',monospace; font-size:13px; letter-spacing:0.04em; color:#D8D4C8; flex:none; width:96px;">REOPEN</div><div style="font-size:15px; line-height:1.6; color:#9B968B;">The frontier opens again from the inherited state.</div></div>
+      <div style="display:flex; gap:24px; padding:18px 0; border-top:1px solid rgba(245,242,234,0.08);"><div style="font-family:'Fira Code',monospace; font-size:12px; color:#88847B; flex:none; width:24px;">00</div><div style="font-family:'Fira Code',monospace; font-size:13px; letter-spacing:0.04em; color:#D8D4C8; flex:none; width:96px;">DIVERGE</div><div style="font-size:15px; line-height:1.6; color:#9B968B;">Independent capabilities enter the field.</div></div>
+      <div style="display:flex; gap:24px; padding:18px 0; border-top:1px solid rgba(245,242,234,0.08);"><div style="font-family:'Fira Code',monospace; font-size:12px; color:#88847B; flex:none; width:24px;">01</div><div style="font-family:'Fira Code',monospace; font-size:13px; letter-spacing:0.04em; color:#D8D4C8; flex:none; width:96px;">EVALUATE</div><div style="font-size:15px; line-height:1.6; color:#9B968B;">Shared tests and judgments make them comparable.</div></div>
+      <div style="display:flex; gap:24px; padding:18px 0; border-top:1px solid rgba(245,242,234,0.08);"><div style="font-family:'Fira Code',monospace; font-size:12px; color:#88847B; flex:none; width:24px;">02</div><div style="font-family:'Fira Code',monospace; font-size:13px; letter-spacing:0.04em; color:#D8D4C8; flex:none; width:96px;">ALIGN</div><div style="font-size:15px; line-height:1.6; color:#9B968B;">The candidate clears the complete shared validity and evaluation regime.</div></div>
+      <div style="display:flex; gap:24px; padding:18px 0; border-top:1px solid rgba(245,242,234,0.08);"><div style="font-family:'Fira Code',monospace; font-size:12px; color:#88847B; flex:none; width:24px;">03</div><div style="font-family:'Fira Code',monospace; font-size:13px; letter-spacing:0.04em; color:#D8D4C8; flex:none; width:96px;">RESOLVE</div><div style="font-size:15px; line-height:1.6; color:#9B968B;">Useful paths become clearer than weak ones.</div></div>
+      <div style="display:flex; gap:24px; padding:18px 0; border-top:1px solid rgba(245,242,234,0.08);"><div style="font-family:'Fira Code',monospace; font-size:12px; color:#A48B3B; flex:none; width:24px;">04</div><div style="font-family:'Fira Code',monospace; font-size:13px; letter-spacing:0.04em; color:#D6B85A; flex:none; width:96px;">INHERIT</div><div style="font-size:15px; line-height:1.6; color:#D8D4C8;">Validated progress becomes the next baseline.</div></div>
+      <div style="display:flex; gap:24px; padding:18px 0; border-top:1px solid rgba(245,242,234,0.08); border-bottom:1px solid rgba(245,242,234,0.08);"><div style="font-family:'Fira Code',monospace; font-size:12px; color:#88847B; flex:none; width:24px;">05</div><div style="font-family:'Fira Code',monospace; font-size:13px; letter-spacing:0.04em; color:#D8D4C8; flex:none; width:96px;">REOPEN</div><div style="font-size:15px; line-height:1.6; color:#9B968B;">The frontier opens again from the inherited state.</div></div>
+    </div>
+
+    <div data-reveal style="margin:72px auto 0; max-width:620px; padding:32px; border-top:1px solid rgba(245,242,234,0.12); border-bottom:1px solid rgba(245,242,234,0.12); font-family:'Fira Code','DM Mono',monospace; font-size:13px; line-height:2; color:#D8D4C8;">
+      <div style="color:#F5F2EA;">INHERIT(K)&nbsp;&nbsp;IFF</div>
+      <div>VALID(K)</div>
+      <div>&forall;e&nbsp;&isin;&nbsp;E:&nbsp;&nbsp;SCORE(K,e)&nbsp;&ge;&nbsp;SCORE(C,e)</div>
+      <div>&exist;e&nbsp;&isin;&nbsp;E:&nbsp;&nbsp;SCORE(K,e)&nbsp;&gt;&nbsp;SCORE(C,e)</div>
+      <div style="margin-top:14px; font-family:'Haffer','Helvetica Neue',Arial,sans-serif; font-size:14px; line-height:1.7; color:#9B968B;">A challenger is inherited only when it is valid, regresses on no required environment, and improves at least one.</div>
     </div>
 
     <div data-reveal style="margin:80px auto 0; max-width:960px;">
@@ -252,16 +268,18 @@ AFFINE     =  ALIGNMENT</div>
   <!-- 04 DESIGN LAWS -->
   <section style="max-width:720px; margin:0 auto; padding:128px 32px 0; box-sizing:border-box;">
     <div data-reveal style="font-family:'Fira Code','DM Mono',monospace; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:#9B968B; text-align:center;">04&nbsp;/&nbsp;Design&nbsp;Laws</div>
-    <div data-reveal style="margin-top:24px; max-width:600px; margin-left:auto; margin-right:auto; text-align:center; font-size:16px; line-height:1.75; color:#9B968B;">Seven rules. When a choice is uncertain, these decide it.</div>
+    <div data-reveal style="margin-top:24px; max-width:600px; margin-left:auto; margin-right:auto; text-align:center; font-size:16px; line-height:1.75; color:#9B968B;">Nine rules. When a choice is uncertain, these decide it.</div>
 
     <div data-reveal style="margin-top:64px; max-width:640px; margin-left:auto; margin-right:auto;">
-      <div style="display:flex; gap:28px; padding:22px 0; border-top:1px solid rgba(245,242,234,0.08);"><div style="font-family:'Fira Code',monospace; font-size:12px; color:#5e5a52; flex:none;">01</div><div><div style="font-size:16px; font-weight:600; color:#F5F2EA;">Plainness is authority</div><div style="margin-top:6px; font-size:15px; line-height:1.6; color:#9B968B;">Remove every element that does not clarify the protocol, mechanism, or thesis.</div></div></div>
-      <div style="display:flex; gap:28px; padding:22px 0; border-top:1px solid rgba(245,242,234,0.08);"><div style="font-family:'Fira Code',monospace; font-size:12px; color:#8F7832; flex:none;">02</div><div><div style="font-size:16px; font-weight:600; color:#D6B85A;">Gold must be earned</div><div style="margin-top:6px; font-size:15px; line-height:1.6; color:#9B968B;">Use gold only for validation, inheritance, selection, replacement, or frontier state.</div></div></div>
-      <div style="display:flex; gap:28px; padding:22px 0; border-top:1px solid rgba(245,242,234,0.08);"><div style="font-family:'Fira Code',monospace; font-size:12px; color:#5e5a52; flex:none;">03</div><div><div style="font-size:16px; font-weight:600; color:#F5F2EA;">The mark is structural</div><div style="margin-top:6px; font-size:15px; line-height:1.6; color:#9B968B;">Treat the Affine mark as a central symbol, not a decorative logo.</div></div></div>
-      <div style="display:flex; gap:28px; padding:22px 0; border-top:1px solid rgba(245,242,234,0.08);"><div style="font-family:'Fira Code',monospace; font-size:12px; color:#5e5a52; flex:none;">04</div><div><div style="font-size:16px; font-weight:600; color:#F5F2EA;">Text is infrastructure</div><div style="margin-top:6px; font-size:15px; line-height:1.6; color:#9B968B;">Copy should read like a protocol paper: compressed, exact, and intentionally spaced.</div></div></div>
-      <div style="display:flex; gap:28px; padding:22px 0; border-top:1px solid rgba(245,242,234,0.08);"><div style="font-family:'Fira Code',monospace; font-size:12px; color:#5e5a52; flex:none;">05</div><div><div style="font-size:16px; font-weight:600; color:#F5F2EA;">Diagrams are proof</div><div style="margin-top:6px; font-size:15px; line-height:1.6; color:#9B968B;">Diagrams must explain mechanism, not decorate.</div></div></div>
-      <div style="display:flex; gap:28px; padding:22px 0; border-top:1px solid rgba(245,242,234,0.08);"><div style="font-family:'Fira Code',monospace; font-size:12px; color:#5e5a52; flex:none;">06</div><div><div style="font-size:16px; font-weight:600; color:#F5F2EA;">Kinship without imitation</div><div style="margin-top:6px; font-size:15px; line-height:1.6; color:#9B968B;">Mirror Bittensor's restraint and structure, but give Affine its own semantic system.</div></div></div>
-      <div style="display:flex; gap:28px; padding:22px 0; border-top:1px solid rgba(245,242,234,0.08); border-bottom:1px solid rgba(245,242,234,0.08);"><div style="font-family:'Fira Code',monospace; font-size:12px; color:#5e5a52; flex:none;">07</div><div><div style="font-size:16px; font-weight:600; color:#F5F2EA;">Alignment over spectacle</div><div style="margin-top:6px; font-size:15px; line-height:1.6; color:#9B968B;">If a choice makes the system prettier but less rigorous, remove it.</div></div></div>
+      <div style="display:flex; gap:28px; padding:22px 0; border-top:1px solid rgba(245,242,234,0.08);"><div style="font-family:'Fira Code',monospace; font-size:12px; color:#88847B; flex:none;">01</div><div><div style="font-size:16px; font-weight:600; color:#F5F2EA;">Plainness is authority</div><div style="margin-top:6px; font-size:15px; line-height:1.6; color:#9B968B;">Remove every element that does not clarify the protocol, mechanism, or thesis.</div></div></div>
+      <div style="display:flex; gap:28px; padding:22px 0; border-top:1px solid rgba(245,242,234,0.08);"><div style="font-family:'Fira Code',monospace; font-size:12px; color:#88847B; flex:none;">02</div><div><div style="font-size:16px; font-weight:600; color:#F5F2EA;">Proof before atmosphere</div><div style="margin-top:6px; font-size:15px; line-height:1.6; color:#9B968B;">Mechanism must carry more weight than mood.</div></div></div>
+      <div style="display:flex; gap:28px; padding:22px 0; border-top:1px solid rgba(245,242,234,0.08);"><div style="font-family:'Fira Code',monospace; font-size:12px; color:#A48B3B; flex:none;">03</div><div><div style="font-size:16px; font-weight:600; color:#D6B85A;">Gold has a declared channel</div><div style="margin-top:6px; font-size:15px; line-height:1.6; color:#9B968B;">The mark uses identity gold; every other gold state must earn validation or inheritance.</div></div></div>
+      <div style="display:flex; gap:28px; padding:22px 0; border-top:1px solid rgba(245,242,234,0.08);"><div style="font-family:'Fira Code',monospace; font-size:12px; color:#88847B; flex:none;">04</div><div><div style="font-size:16px; font-weight:600; color:#F5F2EA;">The monument is unresolved multiplicity</div><div style="margin-top:6px; font-size:15px; line-height:1.6; color:#9B968B;">Contain its spectrum to rare identity moments; never turn it into a decorative palette.</div></div></div>
+      <div style="display:flex; gap:28px; padding:22px 0; border-top:1px solid rgba(245,242,234,0.08);"><div style="font-family:'Fira Code',monospace; font-size:12px; color:#88847B; flex:none;">05</div><div><div style="font-size:16px; font-weight:600; color:#F5F2EA;">Text is infrastructure</div><div style="margin-top:6px; font-size:15px; line-height:1.6; color:#9B968B;">Copy should be compressed, exact, and able to survive technical scrutiny.</div></div></div>
+      <div style="display:flex; gap:28px; padding:22px 0; border-top:1px solid rgba(245,242,234,0.08);"><div style="font-family:'Fira Code',monospace; font-size:12px; color:#88847B; flex:none;">06</div><div><div style="font-size:16px; font-weight:600; color:#F5F2EA;">Diagrams are proof</div><div style="margin-top:6px; font-size:15px; line-height:1.6; color:#9B968B;">Every line, threshold, and state must explain behavior.</div></div></div>
+      <div style="display:flex; gap:28px; padding:22px 0; border-top:1px solid rgba(245,242,234,0.08);"><div style="font-family:'Fira Code',monospace; font-size:12px; color:#88847B; flex:none;">07</div><div><div style="font-size:16px; font-weight:600; color:#F5F2EA;">Kinship without imitation</div><div style="margin-top:6px; font-size:15px; line-height:1.6; color:#9B968B;">Mirror Bittensor's restraint and structure, but give Affine its own semantic system.</div></div></div>
+      <div style="display:flex; gap:28px; padding:22px 0; border-top:1px solid rgba(245,242,234,0.08);"><div style="font-family:'Fira Code',monospace; font-size:12px; color:#88847B; flex:none;">08</div><div><div style="font-size:16px; font-weight:600; color:#F5F2EA;">Accessibility is rigor</div><div style="margin-top:6px; font-size:15px; line-height:1.6; color:#9B968B;">Quiet must never mean unreadable, color-only, or motion-dependent.</div></div></div>
+      <div style="display:flex; gap:28px; padding:22px 0; border-top:1px solid rgba(245,242,234,0.08); border-bottom:1px solid rgba(245,242,234,0.08);"><div style="font-family:'Fira Code',monospace; font-size:12px; color:#88847B; flex:none;">09</div><div><div style="font-size:16px; font-weight:600; color:#F5F2EA;">No unwritten exceptions</div><div style="margin-top:6px; font-size:15px; line-height:1.6; color:#9B968B;">When the system changes intentionally, update the canon.</div></div></div>
     </div>
   </section>
 
@@ -272,13 +290,13 @@ AFFINE     =  ALIGNMENT</div>
 
     <div data-reveal style="margin-top:64px; display:grid; grid-template-columns:1fr 1px 1fr; gap:0;">
       <div style="padding:0 36px 0 0;">
-        <div style="font-family:'Fira Code',monospace; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:#8F7832;">It is working when</div>
-        <div style="margin-top:20px; font-size:15px; line-height:1.95; color:#D8D4C8;">It reads as a protocol object, not an AI website.<br>Alignment is obvious before anything else.<br>The Bittensor relationship feels intentional.<br>Gold is rare and earned.<br>Plainness feels brave, not empty.</div>
+        <div style="font-family:'Fira Code',monospace; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:#A48B3B;">It is working when</div>
+        <div style="margin-top:20px; font-size:15px; line-height:1.95; color:#D8D4C8;">It reads as a protocol object, not an AI website.<br>Alignment is bounded and testable.<br>The Bittensor relationship feels intentional.<br>The monument, mark, and Λ keep distinct roles.<br>Plainness feels brave, not empty.</div>
       </div>
       <div style="background:rgba(245,242,234,0.12);"></div>
       <div style="padding:0 0 0 36px;">
-        <div style="font-family:'Fira Code',monospace; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:#B84A3A;">Reject it when</div>
-        <div style="margin-top:20px; font-size:15px; line-height:1.95; color:#9B968B;">It looks like a generic dark-mode AI page.<br>It reads as a luxury crypto brand.<br>Gold is used as decoration.<br>It needs paragraphs to justify the first screen.<br>It hides the mechanism, or abandons plainness for spectacle.</div>
+        <div style="font-family:'Fira Code',monospace; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:#C0705A;">Reject it when</div>
+        <div style="margin-top:20px; font-size:15px; line-height:1.95; color:#9B968B;">It looks like a generic dark-mode AI page.<br>The monument's spectrum becomes decoration.<br>Gold marks generic interface state.<br>It overclaims what alignment proves.<br>It hides mechanism or fails accessibility.</div>
       </div>
     </div>
 
