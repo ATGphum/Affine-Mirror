@@ -132,6 +132,11 @@ Production note:
 
 The first prototype may use a high-quality type glyph. Final production should use an optically tuned custom Lambda derived from the Affine mark's geometry, not a random font glyph.
 
+Production status (2026-07): the live pages use the small circular gold Affine
+mark (`assets/affine-mark-gold.png`) in the fixed navigation. That is an
+accepted interim signature until the tuned Lambda asset exists — not a
+replacement for Lambda, and not a license to ship a raw font glyph instead.
+
 Do not:
 
 - put Lambda in a circle by default
@@ -187,14 +192,27 @@ ink-white         #F5F2EA
 paper-white       #FFFFFF
 soft-white        #D8D4C8
 muted-white       #9B968B
-faint-white       rgba(255,255,255,0.18)
-hairline-white    rgba(255,255,255,0.10)
+dim-white         #5e5a52
+faint-white       rgba(245,242,234,0.18)
+hairline-white    rgba(245,242,234,0.10)
 gold-validation   #D6B85A
 gold-muted        #8F7832
 gold-faint        rgba(214,184,90,0.20)
-error-red         #B84A3A
+error-red         #C0705A
+gain-green        #6F9F7A
 info-blue         #7C9AB8
 ```
+
+Production notes:
+
+- Faint and hairline whites are derived from ink-white (245,242,234), not pure
+  white, so hairlines sit in the same warmth as the type.
+- error-red was originally specified as #B84A3A; the live pages settled on the
+  softer #C0705A against #1C1C1C. #C0705A is canonical.
+- gain-green exists only for benchmark deltas against the baseline model in
+  data tables. It must never become a general success color: validation and
+  inheritance are gold, not green.
+- info-blue is reserved and currently unused in production.
 
 ### Usage
 
@@ -227,12 +245,20 @@ Red:
 - failure
 - invalidated state
 - rejected path
+- lost challenges and declines in data tables
+
+Green:
+
+- benchmark gains relative to the baseline model (▲ deltas in tables)
+- never for validation, inheritance, or wins — those are gold
+- never dominant
 
 Blue:
 
 - optional informational state
 - never dominant
 - never used as generic AI glow
+- reserved: no production use yet
 
 ### Gold Rule
 
@@ -464,10 +490,14 @@ Navigation should be tiny and protocol-like.
 Desktop:
 
 ```text
-left: Lambda micro mark
-center: ABOUT / RATIONALE / MECHANISM / LOGOS / DOCS
+left: Affine micro mark (currently the small gold mark; Lambda when tuned)
+center: DESIGN SYSTEM / RATIONALE / MANIFESTO / DASHBOARD
 right: optional external link
 ```
+
+The center labels track the live site. Earlier drafts used
+ABOUT / RATIONALE / MECHANISM / LOGOS / DOCS; if the page set changes, update
+this list rather than letting the two drift apart.
 
 Mobile:
 
@@ -482,7 +512,7 @@ Rules:
 - nav should not dominate the page
 - nav labels should be mono uppercase
 - nav should have no filled buttons
-- current page may use muted gold only if the page is validated/selected
+- the current page is marked in gold-validation (the live convention)
 - do not add pill buttons or SaaS CTA buttons
 
 ## Landing Page
@@ -871,6 +901,85 @@ Avoid:
 - heavy shadows
 - glassmorphism
 
+## Product Surfaces
+
+Top-level pages are ceremonial. The Dashboard (and LOGOS, when it exists) is a
+working surface: miners and operators read it in order to act, not only to be
+convinced. Working surfaces keep the blackpaper shell but earn a density
+allowance. This section defines that allowance so it never has to be
+re-derived from the ceremonial rules.
+
+The governing sentence:
+
+> Ceremony for the reader, affordance for the worker.
+
+A working surface may be denser than a longform page. It may never be louder.
+
+### Data Tables
+
+- mono type throughout; muted uppercase headers
+- hairline row separators only; no zebra striping, no cards, no row fills
+- numeric columns right-aligned, with at least 14px separation between columns
+- missing values are an em dash in dim ink — never blank, never zero
+- the current champion's row may be gold; no other row gets color
+- a table wider than its column scrolls horizontally within its own block;
+  the page itself never scrolls horizontally
+- header and body must remain a single table so columns cannot drift apart
+
+### Verdict Labels
+
+The component ban on pill badges targets decorative and marketing chips.
+Working surfaces need machine-state labels, which are allowed in exactly one
+form:
+
+- small mono uppercase text with a 1px hairline border
+- never solid-filled, never larger than the data it describes
+- gold: validation and replacement events (WIN, DETHRONED)
+- red: failure (LOST, LOSE)
+- neutral ink: undecided or equal (TIE)
+
+If a state label starts being used decoratively, remove it.
+
+### Live-Data Charts: The Generational Record
+
+The Evolution chart is the canonical mechanism diagram rendered from live
+data, so it follows the diagram language, not generic charting taste.
+
+Encoding:
+
+```text
+hollow outline   the inherited level, carried from the champion it replaced
+solid fill       what this generation earned — the delta and only the delta
+gold             the current champion generation, nothing else
+gold-muted       historical earned deltas (earned then; not the live frontier)
+value labels     ink-white — state
+delta labels     gold when something was earned; dim em dash on a tie
+```
+
+A generation that earned nothing is entirely hollow. That is not a rendering
+gap; it is the point.
+
+Structure:
+
+- an append-only horizontal strip: one fixed-width group per generation,
+  chronological left to right
+- the strip scrolls within its own block and loads snapped to the current
+  champion, with the previous generation partly visible as the scroll
+  affordance
+- values above the bars, environment letters below
+- no axes, gridlines, or reference lines unless one earns its place without
+  striking through labels — the shared bar scale is the reference
+- bars wide enough to read as objects (about 28px); label clearance, not
+  taste, decides the gap between bars
+
+### Working Tools
+
+Links that operators need — rollouts buckets, download scripts, artifacts —
+are tools, not footnotes. They keep readable muted-white at standard label
+size wherever they appear, including inside ceremonial compositions. Never dim
+a working tool below comfortable legibility to serve composition: that trades
+usability for ceremony, which the accessibility rules already forbid.
+
 ## Page Blueprints
 
 ### Home
@@ -906,6 +1015,21 @@ Sections:
 4. Resolution event.
 5. Inheritance baseline.
 6. Reopening cycle.
+
+### Dashboard
+
+Sections:
+
+1. Champion plaque: masthead, champion line framed by hairlines, working links.
+2. Evolution: the generational record — the live mechanism diagram.
+3. Releases: the era table measured against the baseline model.
+4. Environments: scoring and sampling configuration.
+5. Latest challenge: the most recent bout with per-environment verdicts.
+6. Queue and history: pending challengers and the record of attempts.
+
+The Dashboard is the mechanism made visible. It follows the Product Surfaces
+rules, and its data comes from the live subnet — when the mechanism changes,
+this page changes first.
 
 ### Design System
 
@@ -1034,6 +1158,7 @@ A designer receiving only this document and the doctrine should have:
 - longform blueprint
 - diagram rules
 - component rules
+- product surface rules (tables, verdict labels, live-data charts)
 - mobile rules
 - review criteria
 

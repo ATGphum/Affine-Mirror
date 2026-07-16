@@ -33,6 +33,7 @@ Required designer output from this handoff:
 - one landing page concept
 - one longform rationale page
 - one mechanism page or mechanism section
+- one dashboard / product-surface concept showing the live mechanism
 - one design-system/token page
 - desktop and mobile first viewport states
 - at least one diagram showing evaluation, resolution, and inheritance
@@ -135,6 +136,10 @@ The large mark should not be a bigger Lambda. It should go all the way into the 
 The rule:
 
 > Lambda is the signature. The Affine mark is the monument.
+
+Production status (2026-07): until an optically tuned Lambda asset exists, the
+live site uses the small circular gold Affine mark in navigation. That is an
+accepted interim signature, not a replacement for Lambda.
 
 ## Message Hierarchy
 
@@ -496,6 +501,32 @@ Required content:
 - reopened frontier
 
 Gold should appear only where progress has been validated or inherited.
+
+### Dashboard Page
+
+Purpose:
+
+- show the live mechanism: evaluation, replacement, and inheritance as they actually happen
+- serve miners and operators as a working surface, not only readers
+
+Required content:
+
+- the current champion, stated plainly as the thing to beat
+- the generational record: what each era inherited and what it earned
+- releases measured against the baseline model
+- environments and their scoring state
+- the latest challenge with per-environment verdicts
+- the queue and history of attempts
+
+The Dashboard is where the doctrine becomes falsifiable. Every claim the
+rationale makes about evaluation and inheritance should be checkable against
+this page, and when the live mechanism changes, the Dashboard changes first —
+doctrine copy that contradicts the visible record is corrected, not defended.
+
+Two audiences read it at once. The reader needs the ceremony: champion, gold,
+silence. The miner needs the affordances: rollouts, scripts, verdicts,
+history. Density is allowed; noise is not. The visual system's Product
+Surfaces section defines the rendering rules.
 
 ### Design System Page
 
