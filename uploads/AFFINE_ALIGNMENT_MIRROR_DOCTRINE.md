@@ -1,5 +1,7 @@
 # Affine Alignment Mirror Doctrine
 
+Canon 2.0 · Updated 2026-07-17
+
 ## Status
 
 This document defines Affine's meaning, posture, message, and review standard.
@@ -24,8 +26,9 @@ A designer receiving only these documents and assets should be able to create an
 1. `AFFINE_ALIGNMENT_MIRROR_DOCTRINE.md`
 2. `AFFINE_ALIGNMENT_MIRROR_VISUAL_SYSTEM.md`
 3. `BITTENSOR_REFERENCE_2026-06-18.md`
-4. `affine-mark-clean.png`
-5. `affine-mark-gold.png`
+4. the four reference captures it embeds: `image.png`, `image-508fec0d.png`, `image-92d8c1a6.png`, `image-fb8302eb.png`
+5. `affine-mark-clean.png`
+6. `affine-mark-gold.png`
 
 The required first pass is:
 
@@ -104,6 +107,8 @@ Composition is a consequence of inheritance, not a seventh stage. Validated capa
 
 ### Canonical Proof Example
 
+This is a simplified illustrative rule, not the production acceptance logic.
+
 Let `C` be the current champion, `K` a challenger, and `E` the required environment set.
 
 ```text
@@ -112,6 +117,13 @@ inherit(K) iff
   and for every e in E: score(K, e) >= score(C, e)
   and for at least one e in E: score(K, e) > score(C, e)
 ```
+
+Production comparison is statistical. Scores carry sampling noise, so real
+acceptance operates with tolerances and confidence — conceptually
+`score(K, e) >= score(C, e) - ε(e)` with enough samples for the comparison to
+be trustworthy. The live Dashboard is authoritative for the mechanism as it
+actually behaves; a recorded replacement that this simplified rule would not
+predict means the rule is simplified, not that the record is wrong.
 
 The visual story is:
 
@@ -285,7 +297,7 @@ White is theorem, measurement, navigation, structure, and proof.
 
 Gold is identity when confined to the mark, and earned validation everywhere else.
 
-The monument's spectrum is unresolved multiplicity. It is not a fourth page color.
+The monument's spectrum is not a fourth page color.
 
 The system should feel:
 

@@ -18,6 +18,17 @@
   header nav a:hover { color: #F5F2EA !important; }
   header nav a, header nav span { display: inline-flex; align-items: center; min-height: 44px; }
   :where(a, button, input, select, textarea, [tabindex]):focus-visible { outline: 2px solid #F5F2EA; outline-offset: 4px; }
+
+  .nav-menu-btn { display: none; font-family: 'Fira Code','DM Mono',monospace; font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #F5F2EA; background: none; border: none; cursor: pointer; padding: 0; min-height: 44px; align-items: center; }
+  #nav-overlay { position: fixed; inset: 0; z-index: 60; background: #1C1C1C; display: none; flex-direction: column; align-items: center; justify-content: center; gap: 44px; }
+  #nav-overlay.open { display: flex; }
+  #nav-overlay a { font-family: 'Fira Code','DM Mono',monospace; font-size: 13px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #D8D4C8; }
+  #nav-overlay a[aria-current="page"] { color: #F5F2EA; border-bottom: 1px solid #F5F2EA; padding-bottom: 4px; }
+  #nav-overlay .nav-close { position: absolute; top: 18px; right: 16px; display: inline-flex; }
+  @media (max-width: 760px) {
+    header nav { display: none !important; }
+    .nav-menu-btn { display: inline-flex; }
+  }
   body.reveal-on [data-reveal] { opacity: 0; transform: translateY(16px); transition: opacity 0.6s cubic-bezier(0.22,1,0.36,1), transform 0.6s cubic-bezier(0.22,1,0.36,1); }
   body.reveal-on [data-reveal].in { opacity: 1; transform: none; }
   @media (prefers-reduced-motion: reduce) {
@@ -140,8 +151,18 @@
       <a href="Affine About.dc.html" style="font-family:'Fira Code','DM Mono',monospace; font-size:11px; font-weight:500; letter-spacing:0.08em; text-transform:uppercase; color:#D8D4C8;">Manifesto</a>
       <a href="Affine Dashboard.dc.html" style="font-family:'Fira Code','DM Mono',monospace; font-size:11px; font-weight:500; letter-spacing:0.08em; text-transform:uppercase; color:#D8D4C8;">Dashboard</a>
     </nav>
-    <div style="justify-self:end;"></div>
+    <div style="grid-column:3; justify-self:end; pointer-events:auto;"><button class="nav-menu-btn" type="button" aria-expanded="false" aria-controls="nav-overlay">Menu</button></div>
   </header>
+
+  <div id="nav-overlay" role="dialog" aria-modal="true" aria-label="Navigation">
+    <button class="nav-menu-btn nav-close" type="button" aria-label="Close menu">Close</button>
+    <a href="index.html">Home</a>
+    <a href="Affine Design System.dc.html">Design System</a>
+    <a href="Affine Rationale.dc.html" aria-current="page">Rationale</a>
+    <a href="Affine About.dc.html">Manifesto</a>
+    <a href="Affine Dashboard.dc.html">Dashboard</a>
+  </div>
+
 
   <!-- TITLE -->
   <section style="max-width:720px; margin:0 auto; padding:200px 32px 0; box-sizing:border-box; text-align:center;">
@@ -318,6 +339,23 @@ AFFINE     =  ALIGNMENT</div>
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
   componentDidMount() {
+    const navOverlay = () => document.getElementById('nav-overlay');
+    const navBtn = () => document.querySelector('header .nav-menu-btn');
+    const setNav = (open) => {
+      const ov = navOverlay(); if (!ov) return;
+      ov.classList.toggle('open', open);
+      navBtn()?.setAttribute('aria-expanded', String(open));
+      document.body.style.overflow = open ? 'hidden' : '';
+      (open ? ov.querySelector('.nav-close') : navBtn())?.focus();
+    };
+    document.addEventListener('click', (e) => {
+      if (e.target.closest('#nav-overlay .nav-close')) setNav(false);
+      else if (e.target.closest('header .nav-menu-btn')) setNav(true);
+      else if (e.target.closest('#nav-overlay a')) setNav(false);
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navOverlay()?.classList.contains('open')) setNav(false);
+    });
     document.body.classList.add('reveal-on');
     requestAnimationFrame(() => {
       const obs = new IntersectionObserver((entries) => {

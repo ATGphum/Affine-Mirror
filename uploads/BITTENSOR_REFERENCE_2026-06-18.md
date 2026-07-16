@@ -22,13 +22,13 @@ If a future Bittensor state should influence Affine, create a new dated appendix
 
 ## Captured Views
 
+The four capture files live beside this document in `uploads/` and are part of the handoff package.
+
 ### Landing
 
-File:
+File: [`image.png`](image.png)
 
-```text
-image.png
-```
+![Bittensor capture — Landing](image.png)
 
 Observed:
 
@@ -49,11 +49,9 @@ Affine translation:
 
 ### Whitepaper Opener
 
-File:
+File: [`image-508fec0d.png`](image-508fec0d.png)
 
-```text
-image-508fec0d.png
-```
+![Bittensor capture — Whitepaper Opener](image-508fec0d.png)
 
 Observed:
 
@@ -74,11 +72,9 @@ Affine translation:
 
 ### Equation and Figure Rhythm
 
-File:
+File: [`image-92d8c1a6.png`](image-92d8c1a6.png)
 
-```text
-image-92d8c1a6.png
-```
+![Bittensor capture — Equation and Figure Rhythm](image-92d8c1a6.png)
 
 Observed:
 
@@ -97,11 +93,9 @@ Affine translation:
 
 ### Longform Article
 
-File:
+File: [`image-fb8302eb.png`](image-fb8302eb.png)
 
-```text
-image-fb8302eb.png
-```
+![Bittensor capture — Longform Article](image-fb8302eb.png)
 
 Observed:
 

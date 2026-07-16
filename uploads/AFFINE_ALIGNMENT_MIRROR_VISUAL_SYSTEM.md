@@ -1,5 +1,7 @@
 # Affine Alignment Mirror Visual System
 
+Canon 2.0 · Updated 2026-07-17
+
 ## Status
 
 This document defines how the Affine Alignment Mirror direction is rendered and implemented.
@@ -31,7 +33,7 @@ The governing sentence is:
 
 > Black paper. White theorem. Gold validation.
 
-The full-spectrum monument is a contained exception. It represents unresolved multiplicity and must not become a general page palette.
+The full-spectrum monument is a contained exception (the Doctrine defines its meaning) and must not become a general page palette.
 
 ## Reference Version
 
@@ -74,7 +76,7 @@ Rules:
 - provide a static reduced-motion state
 - keep the surrounding field monochrome
 
-The spectrum means unresolved multiplicity. Do not sample it into gradients, charts, glows, borders, or secondary components.
+Do not sample the spectrum into gradients, charts, glows, borders, or secondary components.
 
 ### Everyday Mark
 
@@ -603,9 +605,11 @@ Operational surfaces may use tables, controls, status rows, and compact charts.
 - use red and green only with arrows, signs, or labels
 - include an accessible summary or data table
 
-**The generational record**
+**The generational record — Affine Dashboard pattern**
 
-The Evolution chart is the canonical mechanism figure rendered from live data. Its encoding is fixed:
+This is a product-surface pattern specific to the Affine Dashboard's Evolution
+chart, recorded so the implementation stays canonical. It is not a general
+charting rule. Its encoding is fixed:
 
 - hollow outline: the inherited level, carried from the replaced champion
 - solid fill: what the generation earned — the delta and only the delta
