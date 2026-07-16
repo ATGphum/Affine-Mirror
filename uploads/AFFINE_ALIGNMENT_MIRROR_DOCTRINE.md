@@ -17,6 +17,8 @@ When the files disagree, use this order:
 2. Visual System for execution.
 3. Implemented pages as examples, not as a source of new rules.
 
+This order governs design rules. For system behavior, the production mechanism specification and its recorded evaluation data are authoritative; pages, including the Dashboard, visualize that record.
+
 Any intentional exception must be written back into the Doctrine and Visual System. The design must not acquire unwritten rules through implementation drift.
 
 ## Handoff Contract
@@ -121,9 +123,10 @@ inherit(K) iff
 Production comparison is statistical. Scores carry sampling noise, so real
 acceptance operates with tolerances and confidence — conceptually
 `score(K, e) >= score(C, e) - ε(e)` with enough samples for the comparison to
-be trustworthy. The live Dashboard is authoritative for the mechanism as it
-actually behaves; a recorded replacement that this simplified rule would not
-predict means the rule is simplified, not that the record is wrong.
+be trustworthy. The production mechanism specification and its recorded
+evaluation data are authoritative for actual behavior; the Dashboard
+visualizes that record. A recorded replacement that this simplified rule
+would not predict means the rule is simplified, not that the record is wrong.
 
 The visual story is:
 
@@ -204,7 +207,7 @@ The monument must remain rare. Do not extract its rainbow into page gradients, a
 
 ### 2. Mark
 
-The flat `gold-validation` Affine mark from `affine-mark-gold.png` is the everyday brand mark.
+The flat `identity-gold` Affine mark from `affine-mark-gold.png` is the everyday brand mark.
 
 Use it for:
 
@@ -238,10 +241,10 @@ The rule:
 
 Gold has two permitted channels:
 
-1. **Identity gold** — reserved for the Affine mark or Lambda signature.
-2. **Validation gold** — marks an earned state such as validation, selection, replacement, inheritance, or the active frontier.
+1. **Identity gold** (`identity-gold`) — reserved for the Affine mark or Lambda signature.
+2. **Validation gold** (`validation-gold`) — marks an earned state such as validation, selection, replacement, inheritance, or the active frontier.
 
-The channels share a pigment but not a claim.
+The channels share a pigment (`affine-gold`) but not a claim.
 
 A gold brand mark means “this is Affine.”
 
