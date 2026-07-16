@@ -1,45 +1,43 @@
 # Affine Alignment Mirror Doctrine
 
-## Purpose
+## Status
 
-This document defines a new standalone design direction for Affine.
+This document defines Affine's meaning, posture, message, and review standard.
 
-It assumes no prior knowledge of the current Affine website, earlier design language, or project repository. A product designer should be able to read this document and understand what Affine is, why this direction exists, how it relates to Bittensor, what the visual posture should communicate, and how to judge whether a design is successful.
+Companion documents:
 
-Companion document:
+- `AFFINE_ALIGNMENT_MIRROR_VISUAL_SYSTEM.md` defines rendering and production rules.
+- `BITTENSOR_REFERENCE_2026-06-18.md` pins the external reference used by this direction.
 
-`AFFINE_ALIGNMENT_MIRROR_VISUAL_SYSTEM.md`
+When the files disagree, use this order:
 
-Use this doctrine for strategy, message, posture, page intent, and review criteria. Use the visual system for color, type, layout, components, page structure, and implementation rules.
+1. Doctrine for meaning.
+2. Visual System for execution.
+3. Implemented pages as examples, not as a source of new rules.
+
+Any intentional exception must be written back into the Doctrine and Visual System. The design must not acquire unwritten rules through implementation drift.
 
 ## Handoff Contract
 
-These two documents are intended to leave the original project and stand alone.
-
-A designer receiving only:
+A designer receiving only these documents and assets should be able to create an initial Affine direction without access to an older Affine project:
 
 1. `AFFINE_ALIGNMENT_MIRROR_DOCTRINE.md`
 2. `AFFINE_ALIGNMENT_MIRROR_VISUAL_SYSTEM.md`
-3. `affine-mark-clean.png`
+3. `BITTENSOR_REFERENCE_2026-06-18.md`
+4. `affine-mark-clean.png`
+5. `affine-mark-gold.png`
 
-should be able to create an initial Affine design direction without asking for the older Affine docs.
+The required first pass is:
 
-The Lambda micro mark may begin as the glyph `Λ` in early design exploration. For final production, it should become an optically tuned Affine Lambda asset derived from the geometry and attitude of `affine-mark-clean.png`.
-
-The designer should still inspect the live Bittensor website before final execution, because this direction depends on mirroring its current restraint, spacing, navigation scale, longform rhythm, and protocol-paper posture. The goal is not to copy Bittensor's exact assets. The goal is to translate its seriousness into Affine's opposite pole.
-
-Required designer output from this handoff:
-
-- one landing page concept
+- one desktop and mobile landing viewport
 - one longform rationale page
-- one mechanism page or mechanism section
-- one dashboard / product-surface concept showing the live mechanism
+- one mechanism page or section
 - one design-system/token page
-- desktop and mobile first viewport states
-- at least one diagram showing evaluation, resolution, and inheritance
-- a short written note explaining where the design mirrors Bittensor and where it departs
+- one diagram showing evaluation, resolution, inheritance, and reopening
+- one operational proof surface
+- a note explaining what is mirrored from Bittensor and what is uniquely Affine
 
-If the designer cannot produce those artifacts from these docs, the docs are incomplete.
+The Bittensor reference is versioned. Designers should use the captured reference rather than silently inheriting future changes from a live website. A newer live reference may replace it only through a dated update to the appendix and both companion documents.
 
 ## Core Thesis
 
@@ -55,698 +53,344 @@ Affine asks:
 
 > Which intelligence should survive, compose, inherit, and become the next foundation?
 
-The relationship is not competitive. It is complementary.
+The relationship is complementary, not competitive.
 
-If Bittensor is the market that produces intelligence, Affine is the mechanism that makes produced intelligence cumulative. It evaluates, aligns, composes, validates, inherits, and reopens the frontier.
+If Bittensor creates market conditions for open intelligence, Affine defines how useful progress becomes cumulative. It evaluates candidates under shared pressure, resolves valid improvements, inherits them as the next baseline, and reopens the frontier.
 
-The design direction:
+Primary line:
 
-> Make Affine feel like the color-inverted counterpart to Bittensor's protocol minimalism.
+> The alignment layer for open intelligence.
 
-The strategic phrase:
+Strategic line:
 
 > Incentives produce intelligence. Alignment decides what survives.
 
-The shortest product line:
+Product line:
+
+> Affine makes distributed intelligence cumulative.
+
+## What Alignment Means Here
+
+In this direction, alignment has a precise system meaning:
+
+> A candidate is aligned when it satisfies the shared evaluation and validity conditions required to become part of the inherited frontier.
+
+This is not a claim that one benchmark proves general moral, social, or artificial-general-intelligence alignment. Public copy must not imply that Affine has solved every meaning of AI alignment.
+
+Affine alignment concerns:
+
+- comparability under shared evaluation
+- resistance to invalid or locally optimized improvements
+- resolution across the whole required environment set
+- inheritance of validated progress
+- composition from an agreed baseline
+
+## The Mechanism
+
+The canonical sequence is:
+
+```text
+DIVERGE -> EVALUATE -> ALIGN -> RESOLVE -> INHERIT -> REOPEN
+```
+
+1. **Diverge** — independent models, agents, runs, miners, capabilities, or outputs enter the field.
+2. **Evaluate** — shared tests, constraints, or judgments make candidates comparable.
+3. **Align** — candidates encounter the full validity and evaluation regime, not one convenient metric.
+4. **Resolve** — weak, invalid, or incompatible paths recede; a valid improvement becomes legible.
+5. **Inherit** — validated progress becomes the next baseline.
+6. **Reopen** — the frontier opens again from the inherited state.
+
+Composition is a consequence of inheritance, not a seventh stage. Validated capabilities can compose because they share an inherited baseline.
+
+### Canonical Proof Example
+
+Let `C` be the current champion, `K` a challenger, and `E` the required environment set.
+
+```text
+inherit(K) iff
+  valid(K)
+  and for every e in E: score(K, e) >= score(C, e)
+  and for at least one e in E: score(K, e) > score(C, e)
+```
+
+The visual story is:
+
+```text
+many challengers
+-> one shared evaluation field
+-> invalid and regressive paths recede
+-> one challenger resolves
+-> the inherited baseline turns gold
+-> new challengers open from that baseline
+```
+
+This is the default example for diagrams and operational proof. If the production mechanism changes, update the example rather than preserving a false metaphor.
+
+## Internal Mirror, Public Identity
+
+The Bittensor mirror explains the direction internally:
+
+- white paper becomes blackpaper
+- incentive becomes alignment
+- production becomes selection and inheritance
+- network signal becomes evaluated proof
+- monochrome rigor gains rare semantic gold
+- the central network object becomes the Affine monument or mechanism
+
+Publicly, Affine must lead with its own identity:
 
 > The alignment layer for open intelligence.
 
-## Internal Logic, Public Identity
-
-The Bittensor mirror is core to the design direction, but it should not become a public gimmick.
-
-Internally, the mirror explains why the system is so restrained:
-
-- why the palette is inverted
-- why the layout is sparse
-- why the nav is tiny
-- why longform pages feel like protocol papers
-- why the Affine mark is treated as a central symbol
-- why gold is rare and semantic
-
-Publicly, Affine should lead with its own identity:
-
-> The alignment layer for open intelligence.
-
-The Bittensor relationship can appear as a single clarifying line:
+The Bittensor contrast may appear once when it speeds understanding:
 
 > Bittensor is the incentive layer. Affine is the alignment layer.
 
-Do not make "mirror of Bittensor" the headline. The design should make the kinship felt. The copy should use the relationship only when it sharpens understanding.
+Do not make “the mirror of Bittensor” a public headline. The kinship should be felt before it is explained.
 
-## Symbol System
-
-Bittensor's small mark is essentially tau: `τ`.
-
-Affine's small mark should be Lambda: `Λ`.
-
-This is one of the cleanest parts of the mirror system. It lets the relationship work at symbol scale without requiring explanatory copy.
-
-Use the symbol hierarchy this way:
-
-```text
-small contexts: Λ
-large contexts: full Affine mark language derived from affine-mark-clean.png
-```
-
-Small contexts include:
-
-- favicon
-- mobile nav
-- tiny desktop nav
-- page corner mark
-- social avatar
-- compact footer mark
-- loading state
-- tiny document stamp
-
-Large contexts include:
-
-- landing page center
-- manifesto/rationale title moments
-- poster compositions
-- launch visuals
-- full-page identity moments
-- diagrammatic identity explorations
-
-The `Λ` should feel like Affine's equivalent of `τ`: simple, protocol-native, mathematical, and instantly legible at tiny sizes.
-
-The large mark should not be a bigger Lambda. It should go all the way into the richer Affine identity: forms, cuts, geometry, gold treatments, and compositions derived from `affine-mark-clean.png`.
-
-The rule:
-
-> Lambda is the signature. The Affine mark is the monument.
-
-Production status (2026-07): until an optically tuned Lambda asset exists, the
-live site uses the small circular gold Affine mark in navigation. That is an
-accepted interim signature, not a replacement for Lambda.
-
-## Message Hierarchy
-
-Every Affine Alignment Mirror page should preserve this order.
-
-1. **Category**
-   Affine is the alignment layer for open intelligence.
-
-2. **Mechanism**
-   Affine evaluates, aligns, resolves, inherits, and reopens the frontier.
-
-3. **Proof**
-   Validated intelligence becomes the next baseline.
-
-4. **Contrast**
-   Bittensor is the incentive layer. Affine is the alignment layer.
-
-5. **Invitation**
-   Explore the mechanism, rationale, or operational surface.
-
-Do not start with community, ecosystem, token, agent, product dashboard, or LOGOS. Those may matter later, but they are not the opening definition of this direction.
-
-The first page must make alignment obvious before asking the user to understand anything else. The Bittensor contrast should be available, but it does not need to dominate the first impression.
-
-## One-Page Canon
-
-If the rest of this document is ignored, keep this.
-
-Affine makes intelligence compound.
-
-Distributed intelligence can produce many useful outputs while still failing to accumulate progress. Without alignment, evaluation, inheritance, and composition, each participant can become locally useful but globally fragmented.
-
-Affine exists to prevent that fragmentation.
-
-It is the alignment layer that turns open intelligence into cumulative intelligence.
-
-The brand equation:
-
-```text
-BITTENSOR = INCENTIVE
-AFFINE    = ALIGNMENT
-```
-
-The visual equation:
-
-```text
-Bittensor: white paper, black signal, incentive network.
-Affine:    black paper, white theorem, gold validation.
-```
-
-The product equation:
-
-```text
-Affine = Evaluate + Align + Compose + Inherit + Reopen
-```
-
-The design must always feel:
-
-- minimal, not empty
-- canonical, not decorative
-- protocol-native, not startup-polished
-- academic, but not inaccessible
-- austere, but not cold
-- aligned with Bittensor, but not derivative
-- blackpaper to Bittensor's whitepaper
-
-## Why This Direction
-
-The official Bittensor website has a severe, protocol-paper aesthetic:
-
-- very large white space
-- tiny centered navigation
-- sparse monochrome type
-- minimal symbolic marks
-- centered mathematical/network objects
-- narrow longform text columns
-- academic section labels
-- equations treated as visual anchors
-- no marketing cards
-- no decorative gradients
-- almost no color
-
-That plainness works because Bittensor is not trying to look like a typical software company. It looks like a protocol thesis.
-
-Affine should meet that seriousness, not compete with it through more visual noise.
-
-But Affine should not become the same object.
-
-Affine should be the mirror:
-
-- Bittensor is white; Affine is black.
-- Bittensor is incentive; Affine is alignment.
-- Bittensor centers the network; Affine centers judgment.
-- Bittensor shows production; Affine shows selection.
-- Bittensor is the market; Affine is the grammar of survival.
-
-This direction makes Affine feel native to the Bittensor world while giving it an independent philosophical role.
-
-## The Blackpaper Principle
-
-Affine should feel like a blackpaper, not a landing page.
-
-This means:
-
-- the first impression is sparse and iconic
-- the site reads like a canonical protocol artifact
-- text has the authority of a theorem, not a pitch
-- diagrams and equations are treated as primary content
-- negative space is part of the message
-- gold is rare and meaningful
-- design restraint signals seriousness
-
-The absence of decoration is not a lack of design.
-
-It is the design.
-
-Plainness becomes strength when every remaining element feels necessary.
-
-## Relationship To Bittensor
-
-Use this relationship carefully.
-
-Affine can be presented as Bittensor-complementary:
-
-- Bittensor is the incentive layer.
-- Affine is the alignment layer.
-- Bittensor rewards production.
-- Affine validates inheritance.
-- Bittensor opens the market.
-- Affine makes progress accumulate.
-
-Do not imply:
-
-- Affine is the official Bittensor website.
-- Affine is owned by Bittensor.
-- Affine replaces Bittensor.
-- Affine copies Bittensor because it lacks its own identity.
-- Affine depends on a single infrastructure provider or subnet.
-
-The design should feel like conceptual kinship, not counterfeit.
-
-The best interpretation:
+The desired interpretation is:
 
 > Same civilization. Opposite pole.
-
-## Mirror, Not Clone
-
-This direction deliberately mirrors Bittensor, but a mirror is not a clone.
 
 Mirror:
 
 - restraint
 - centered composition
 - paper-like longform rhythm
-- tiny nav
+- tiny navigation
 - mathematical seriousness
 - symbolic first viewport
 - protocol-level silence
 
-Do not clone:
+Do not copy:
 
-- Bittensor's mark
-- Bittensor's exact diagrams
-- Bittensor's copy
-- Bittensor's white background
+- Bittensor's marks or assets
+- exact diagrams, equations, or copy
+- navigation labels that do not fit Affine
 - Bittensor's identity as an incentive market
-- Bittensor's navigation labels if they do not fit Affine
-- any asset, figure, equation, or whitepaper fragment that belongs to Bittensor
+- a live-site detail that is absent from the pinned reference
 
-Affine must earn its difference through meaning:
+If the result looks merely like “Bittensor in dark mode,” it is unfinished.
 
-- black instead of white
-- alignment instead of incentive
-- gold validation instead of monochrome network signal
-- selection and inheritance instead of production and reward
-- judgment instead of market formation
+## Identity System
 
-If a viewer says "this looks like Bittensor but black," the design is not finished.
+Affine has three identity levels.
 
-If a viewer says "this feels like the missing counterpart to Bittensor," the design is working.
+### 1. Monument
 
-## What Affine Is
+The full-spectrum Affine mark from `affine-mark-clean.png` is the monument.
 
-Affine is the mechanism through which distributed intelligence becomes cumulative.
+Use it for:
 
-It aligns independent capabilities through evaluation pressure, validation grammar, inheritance, and composition.
+- the landing hero
+- manifesto or rationale openers
+- launch and poster compositions
+- rare full-page identity moments
 
-It is not:
+The monument is the one deliberate exception to the nearly monochrome palette. Its spectral multiplicity represents unresolved possibility: many paths, states, or candidates held before resolution.
 
-- a single model
-- a conventional research lab
-- a passive marketplace
-- a chatbot
-- a social network
-- a generic AI protocol
-- a dashboard skin
+The monument must remain rare. Do not extract its rainbow into page gradients, ambient glows, charts, or decorative color systems.
 
-Affine should be understood as a system that helps answer:
+### 2. Mark
 
-- What intelligence has been produced?
-- What was evaluated?
-- What improved?
-- What failed?
-- What should be inherited?
-- What should be replaced?
-- What composes with what?
-- What becomes the new frontier?
+The flat `gold-validation` Affine mark from `affine-mark-gold.png` is the everyday brand mark.
 
-## Mechanism
+Use it for:
 
-The core Affine sequence:
+- navigation
+- product UI
+- dashboards
+- compact identity moments
+- charts where authorship must be clear
 
-```text
-DIVERGE -> EVALUATE -> ALIGN -> RESOLVE -> INHERIT -> REOPEN
-```
+This is **identity gold**. It identifies Affine; it does not claim that the surrounding content is validated.
 
-Meaning:
+### 3. Lambda Signature
 
-1. **Diverge**: independent capabilities, models, miners, agents, runs, or outputs enter the field.
-2. **Evaluate**: shared tests, benchmarks, constraints, or human judgments make them comparable.
-3. **Align**: pressure reveals what serves the broader system rather than local output alone.
-4. **Resolve**: useful paths become clearer than weak or incompatible paths.
-5. **Inherit**: validated progress becomes the next baseline.
-6. **Reopen**: the frontier opens again from the inherited state.
+`Λ` is the minimal protocol signature.
 
-This sequence should appear in page structure, diagrams, copy, visual rhythm, and product UI.
+Use it for:
 
-If a design cannot explain how something enters, gets evaluated, resolves, and carries forward, it is probably not Affine.
+- favicon
+- document stamp
+- footer
+- tiny loading state
+- the smallest contexts where the full mark loses clarity
 
-## Visual Philosophy
+Lambda should be a tuned asset in production. A type glyph or simple drawn form is acceptable only during prototyping.
 
-The entire visual system should be built from three ideas:
+The rule:
 
-```text
-BLACK FIELD
-WHITE THESIS
-GOLD VALIDATION
-```
+> Lambda is the signature. The gold mark is the everyday brand. The full-spectrum mark is the monument.
 
-Black is not mood. It is the field of unresolved possibility.
+## Gold Semantics
 
-White is not decoration. It is the theorem, measurement, text, and structure.
+Gold has two permitted channels:
 
-Gold is not brand glitter. It is validation, inheritance, replacement, and aligned survival.
+1. **Identity gold** — reserved for the Affine mark or Lambda signature.
+2. **Validation gold** — marks an earned state such as validation, selection, replacement, inheritance, or the active frontier.
 
-The result should feel:
+The channels share a pigment but not a claim.
 
-- mathematical
-- silent
-- severe
-- valuable
-- protocol-level
-- slightly sacred, but never mystical
+A gold brand mark means “this is Affine.”
 
-## Narrative Position
+A gold data point, line, label, or result means “this state has earned inheritance.”
 
-Affine's narrative should be expressed as clean, theorem-like lines.
+Do not use gold for generic active navigation, hover styling, buttons, borders, premium mood, or decoration. Current navigation should be expressed with white type and a non-color indicator.
 
-Primary:
+## Message Hierarchy
+
+Preserve this order:
+
+1. **Category** — Affine is the alignment layer for open intelligence.
+2. **Mechanism** — Affine evaluates, aligns, resolves, inherits, and reopens.
+3. **Proof** — a valid improvement becomes the next baseline.
+4. **Contrast** — Bittensor is incentive; Affine is alignment.
+5. **Invitation** — explore the mechanism, rationale, or operational proof.
+
+Do not begin with community, token, ecosystem, agent, dashboard, or LOGOS. Those can follow after the category and mechanism are clear.
+
+## Voice
+
+The voice is compressed, exact, and calm.
+
+Use theorem-like lines:
 
 > The alignment layer for open intelligence.
 
-Secondary:
-
-> Incentives produce intelligence. Alignment decides what survives.
-
-Tertiary:
-
-> Affine makes distributed intelligence cumulative.
-
-Explainer:
-
-> Bittensor creates an open market for intelligence. Affine defines how intelligence is evaluated, aligned, inherited, and composed into the next frontier.
-
-More poetic:
-
-> The market creates signal. Affine preserves the signal that should become structure.
-
-Avoid:
-
-- "AI for everyone"
-- "The future of agents"
-- "Unlocking the next era"
-- "Autonomous intelligence platform"
-- "Self-evolving network"
-- "The brain of Bittensor"
-- "An ecosystem of subnets"
-- "A beautiful new AI experience"
-
-The voice should be compressed, exact, and calm.
-
-## Page-Level Direction
-
-The site should feel like a family of blackpaper documents.
-
-### Landing Page
-
-Purpose:
-
-- establish Affine as the alignment layer
-- show the Affine mark as a canonical symbol
-- create protocol-level kinship without requiring the viewer to know Bittensor
-- avoid explaining too much too soon
-
-First viewport:
-
-```text
-top nav, tiny
-centered Affine mark
-one theorem line
-large black field
-rare gold accent
-```
-
-Recommended line:
-
-> The alignment layer for open intelligence.
-
-Alternate line:
-
-> Incentives produce intelligence. Alignment decides what survives.
-
-Do not use cards, feature grids, marketing hero copy, bright illustration, or startup-style CTA clusters in the first viewport.
-
-### Rationale / Manifesto Page
-
-Purpose:
-
-- explain why incentive alone is not enough
-- establish the alignment problem
-- make Affine's role rigorous
-
-Structure:
-
-```text
-00 / ABSTRACT
-01 / INCENTIVE
-02 / ALIGNMENT
-03 / EVALUATION
-04 / INHERITANCE
-05 / FRONTIER
-```
-
-The page should read like an inverted Bittensor whitepaper page: narrow centered column, huge vertical spacing, equations or diagrams as sacred inserts, minimal nav.
-
-### Mechanism Page
-
-Purpose:
-
-- show the causal sequence
-- make evaluation, replacement, and inheritance visible
-
-Required content:
-
-- divergence diagram
-- evaluation threshold
-- resolution state
-- inheritance line
-- reopened frontier
-
-Gold should appear only where progress has been validated or inherited.
-
-### Dashboard Page
-
-Purpose:
-
-- show the live mechanism: evaluation, replacement, and inheritance as they actually happen
-- serve miners and operators as a working surface, not only readers
-
-Required content:
-
-- the current champion, stated plainly as the thing to beat
-- the generational record: what each era inherited and what it earned
-- releases measured against the baseline model
-- environments and their scoring state
-- the latest challenge with per-environment verdicts
-- the queue and history of attempts
-
-The Dashboard is where the doctrine becomes falsifiable. Every claim the
-rationale makes about evaluation and inheritance should be checkable against
-this page, and when the live mechanism changes, the Dashboard changes first —
-doctrine copy that contradicts the visible record is corrected, not defended.
-
-Two audiences read it at once. The reader needs the ceremony: champion, gold,
-silence. The miner needs the affordances: rollouts, scripts, verdicts,
-history. Density is allowed; noise is not. The visual system's Product
-Surfaces section defines the rendering rules.
-
-### Design System Page
-
-Purpose:
-
-- define tokens, spacing, type, diagram rules, and proof rules
-- teach future designers how to maintain the blackpaper aesthetic
-
-This page should be as minimal as the system itself.
-
-### LOGOS Page
-
-Purpose:
-
-- connect LOGOS to Affine without dissolving LOGOS into Affine
-- present LOGOS as Affine intelligence made operational
-
-LOGOS may use the same blackpaper shell, but it must show operational proof: run state, loop state, trace, artifact, machine, memory, and controls.
-
-If Affine is the alignment layer, LOGOS is the operational surface through which aligned intelligence does work.
-
-## Copy System
-
-### Product Definition
-
-Use:
-
-> Affine is the alignment layer for open intelligence.
-
-Expanded:
-
-> Affine evaluates, aligns, composes, and inherits distributed intelligence so useful progress can compound.
-
-### Bittensor Relationship
-
-Use:
-
-> Bittensor is the incentive layer. Affine is the alignment layer.
-
-Expanded:
-
-> Bittensor creates the market conditions for open intelligence. Affine defines the grammar by which intelligence is evaluated, selected, inherited, and reopened.
-
-Use this relationship sparingly on public surfaces. It is strongest as a single contrast line, not as repeated positioning. Affine should still make sense to someone who has never seen the Bittensor website.
-
-### Mechanism
-
-Use:
-
-> Diverge. Evaluate. Align. Resolve. Inherit. Reopen.
-
-Expanded:
-
-> Independent capabilities enter the field, encounter shared evaluation pressure, resolve into validated progress, and become the baseline for the next cycle.
-
-### Validation
-
-Use:
-
-> Gold is earned.
-
-Expanded:
-
-> Gold marks validated state: a result, threshold, lineage, or replacement event that has earned inheritance.
-
-### Page Copy Starter Kit
-
-Use or adapt this copy for first design explorations.
-
-Home theorem:
-
-> The alignment layer for open intelligence.
-
-Home support line:
-
-> Affine evaluates, aligns, composes, and inherits distributed intelligence so useful progress can compound.
-
-Optional contrast line:
-
-> Bittensor is the incentive layer. Affine is the alignment layer.
-
-Rationale abstract:
-
-> Open intelligence can produce capability without producing continuity. Markets can discover useful work, but discovery alone does not decide what should be retained, composed, replaced, or inherited. Affine defines the alignment layer that turns distributed output into cumulative progress.
-
-Mechanism intro:
-
-> Independent capabilities enter the field. Shared evaluation pressure makes them comparable. Weak paths recede. Useful paths resolve. Validated progress is inherited, and the frontier opens again.
-
-Bittensor relationship:
-
-> Bittensor creates the incentive conditions for open intelligence. Affine defines the alignment grammar that lets useful intelligence survive beyond any single run, model, miner, or epoch.
-
-Validation line:
+> Production is not progress. Only what aligns survives.
 
 > Gold marks the point at which output becomes inheritance.
 
-Footer line:
-
 > Diverge. Evaluate. Align. Resolve. Inherit. Reopen.
-
-Avoid expanding these into marketing paragraphs on the landing page. The first screen should stay theorem-like.
-
-## Design Laws
-
-1. **Plainness is authority**
-   Remove every element that does not clarify the protocol, mechanism, or thesis.
-
-2. **Gold must be earned**
-   Use gold only for validation, inheritance, selection, replacement, or frontier state.
-
-3. **The mark is a theorem**
-   The Affine mark should be treated as a central symbol, not a decorative logo.
-
-4. **Text is infrastructure**
-   Copy should read like a protocol paper: compressed, exact, and intentionally spaced.
-
-5. **Diagrams are proof**
-   Diagrams must explain mechanism, not decorate.
-
-6. **Kinship without imitation**
-   Mirror Bittensor's restraint and structure, but give Affine its own semantic system.
-
-7. **Alignment over spectacle**
-   If a visual choice makes the system prettier but less rigorous, remove it.
-
-## What To Avoid
 
 Avoid:
 
-- generic AI gradients
-- neon purple or blue as dominant brand color
-- oversized marketing cards
-- rounded SaaS dashboards on top-level pages
-- dense product UI on the landing page
-- stock imagery
-- mascot language
-- futuristic sci-fi surfaces
-- decorative particles
-- meaningless mathematical symbols
-- gold used as luxury styling
-- copying Bittensor's exact assets or marks
+- inflated future claims
+- generic AI language
+- mystical claims without mechanism
+- equations that do not correspond to real behavior
+- calling Affine “the brain of Bittensor”
+- implying official ownership or endorsement by Bittensor
+- treating “alignment” as an unlimited safety claim
 
-Affine should not look expensive in a luxury sense.
+## Visual Posture
 
-It should look expensive in an intellectual sense.
+The governing sentence is:
 
-## The Designer's Mental Model
+> Black paper. White theorem. Gold validation.
 
-Design Affine as if it were:
+Black is the field of unresolved possibility.
 
-- a protocol paper
-- a mathematical field note
-- a selection mechanism
-- a blackpaper artifact
-- an alignment theorem
+White is theorem, measurement, navigation, structure, and proof.
 
-Do not design Affine as if it were:
+Gold is identity when confined to the mark, and earned validation everywhere else.
 
-- a SaaS homepage
-- a crypto landing page
-- an AI assistant brand
-- a data dashboard first
-- a lore-heavy mythology project
+The monument's spectrum is unresolved multiplicity. It is not a fourth page color.
 
-The design should feel like it was discovered, not launched.
+The system should feel:
 
-## Success Criteria
+- minimal, not empty
+- canonical, not decorative
+- academic, not inaccessible
+- austere, not cold
+- protocol-native, not startup-polished
+- slightly sacred, never mystical
 
-A successful design can answer these questions in the first ten seconds:
+The absence of decoration is part of the design, but plainness is only earned when the remaining content is concrete.
 
-1. Does this feel like a protocol-level object?
-2. Is Affine clearly positioned as alignment, not incentive?
-3. Does the Bittensor relationship feel intentional?
-4. Does the black/white inversion feel meaningful rather than arbitrary?
-5. Is gold rare and semantically earned?
-6. Does the page avoid startup marketing tropes?
-7. Does the page feel serious enough for technical audiences?
-8. Does the page still have emotional force despite being minimal?
-9. Can a viewer explain what Affine does after reading the first page?
-10. Does the system make cumulative intelligence feel inevitable?
+## Page Intent
 
-## 10/10 Bar
+### Landing
 
-A 10/10 Affine Alignment Mirror direction does all of this:
+Establish category and symbol in one still image:
 
-1. Looks like the blackpaper counterpart to Bittensor's whitepaper world.
-2. Communicates "alignment layer" faster than it communicates "AI website."
-3. Uses black, white, and gold with severe restraint.
-4. Makes the Affine mark feel canonical.
-5. Uses whitespace as structure, not emptiness.
-6. Treats equations, diagrams, and section labels as core brand material.
-7. Makes every gold moment feel earned.
-8. Has enough rigor for a protocol audience.
-9. Has enough mystery to be memorable.
-10. Can stand alone without the current Affine design language.
+```text
+tiny navigation
+full-spectrum monument
+one theorem line
+large black field
+optional proof sequence
+```
+
+No cards, feature grid, CTA cluster, social-proof strip, partner logos, or ambient effects.
+
+### Rationale
+
+Explain:
+
+1. why production does not guarantee continuity
+2. what alignment means
+3. how evaluation resolves a valid improvement
+4. how inheritance makes progress cumulative
+
+Use narrow reading columns and at least one real proof example.
+
+### Mechanism
+
+Show the causal sequence. It must include candidate inputs, evaluation pressure, invalid or regressive paths, resolution, inherited baseline, and reopened candidates.
+
+### Operational Surface
+
+Show evidence before claims:
+
+- current baseline
+- challenger state
+- environment-level results
+- validity state
+- replacement decision
+- lineage or inherited frontier
+
+Density is allowed when every element supports an operational decision.
+
+### Design System
+
+Make rules inspectable: identity levels, tokens, typography, layout, diagrams, interactions, accessibility, exceptions, and kill criteria.
+
+## Design Laws
+
+1. **Plainness is authority** — remove elements that do not clarify thesis, mechanism, proof, or action.
+2. **Proof before atmosphere** — mechanism must carry more weight than mood.
+3. **Gold has a declared channel** — identity or validation; never ambiguity.
+4. **The monument is unresolved multiplicity** — keep its spectrum rare and contained.
+5. **Text is infrastructure** — copy must be exact enough to survive technical scrutiny.
+6. **Diagrams are proof** — every line, threshold, and state must have meaning.
+7. **Kinship without imitation** — mirror Bittensor's restraint, not its property.
+8. **Accessibility is part of rigor** — quiet must never mean unreadable.
+9. **No unwritten exceptions** — update the canon when the system changes.
 
 ## Kill Criteria
 
-Reject a design direction if any of these are true:
+Reject the direction if:
 
 - it looks like a generic dark-mode AI page
-- it looks like a luxury crypto brand
-- it uses gold as decoration
-- it loses the Bittensor mirror idea
-- it copies Bittensor so literally that Affine lacks identity
-- it needs paragraphs of explanation to justify the first screen
-- it hides the alignment mechanism
-- it makes Affine feel like only a logo swap
-- it abandons plainness for spectacle
-- it cannot express evaluation, inheritance, or replacement
+- it reads as a luxury crypto brand
+- gold is used as decoration or generic UI state
+- the monument's spectrum leaks into decorative gradients
+- it looks like a Bittensor clone or simple inversion
+- it needs paragraphs to justify the first screen
+- it hides evaluation, inheritance, or replacement
+- diagrams perform seriousness without explaining behavior
+- “alignment” is presented as a broader claim than the mechanism supports
+- text or interaction states fail accessibility requirements
+- minimalism becomes ceremonial emptiness
 
-## Final Design Brief
+## Review Standard
 
-Create Affine as the color-inverted alignment counterpart to Bittensor's minimal protocol website.
+A successful execution answers these questions quickly:
 
-The site should feel like a blackpaper: black ground, white theorem, gold validation. It should use the Affine mark as the central symbol and express Affine as the alignment layer for open intelligence. The visual system should be extremely minimal, academically rigorous, and quiet enough that every mark, equation, line, and gold accent feels intentional.
+1. Is Affine clearly the alignment layer?
+2. Can the viewer explain what gets evaluated and inherited?
+3. Does the Bittensor relationship feel intentional but secondary?
+4. Are the three identity levels used correctly?
+5. Is the monument's spectrum contained?
+6. Does every non-brand gold element represent earned state?
+7. Is there concrete operational proof?
+8. Does the system remain usable without motion or color alone?
+9. Does it feel protocol-level without becoming mystical?
+10. Can it stand alone from both the old Affine language and a changing live reference?
 
-The first impression should not say "AI startup."
+The target is not “a beautiful AI website.”
 
-It should say:
+The target is:
 
-> This is the mechanism by which open intelligence learns what should survive.
+> A rigorous mechanism by which open intelligence learns what should survive.
