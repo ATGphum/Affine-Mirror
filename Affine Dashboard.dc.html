@@ -15,6 +15,7 @@
   html, body { margin: 0; padding: 0; background: #1c1c1c; }
   ::selection { background: rgba(214,184,90,0.30); color: #F5F2EA; }
   a { text-decoration: none; }
+  :where(a, button, input, select, textarea, [tabindex]):focus-visible { outline: 2px solid #F5F2EA; outline-offset: 4px; }
   header nav a:hover { color: #F5F2EA !important; }
   header nav a, header nav span { display: inline-flex; align-items: center; min-height: 44px; }
   .dash { font-family: 'Fira Code','DM Mono',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; }
